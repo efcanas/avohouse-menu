@@ -7,166 +7,176 @@
 
 <style>
 
-*{margin:0;padding:0;box-sizing:border-box;}
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+scroll-behavior:smooth;
+}
 
 body{
-    font-family:'Helvetica Neue', Arial, sans-serif;
-    background:#111;
-    color:white;
+font-family:'Helvetica Neue', Arial, sans-serif;
+background:#111;
+color:white;
 }
 
 /* HERO */
 
 .hero{
-    position:relative;
-    height:100vh;
-    background:url('Fondo.png') center/cover no-repeat;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    text-align:center;
+position:relative;
+min-height:100vh;
+background: url('Fondo.png') center/cover fixed no-repeat;
+display:flex;
+align-items:flex-start;
+justify-content:center;
+text-align:center;
+padding-top:60px;
 }
 
 .overlay{
-    position:absolute;
-    width:100%;
-    height:100%;
-    background:rgba(0,0,0,0.75);
+position:absolute;
+width:100%;
+height:100%;
+background:rgba(0,0,0,0.72);
+top:0;
+left:0;
 }
 
 .hero-content{
-    position:relative;
-    z-index:2;
-    max-width:700px;
-    padding:20px;
+position:relative;
+z-index:2;
+max-width:650px;
+padding:20px;
 }
-
-/* LOGO MÁS GRANDE */
 
 .logo{
-    width:320px;
-    margin-bottom:20px;
+width:300px; /* MÁS GRANDE */
+margin-bottom:15px;
 }
 
-/* MARCA */
-
 .brand-name{
-    font-size:2.5em;
-    letter-spacing:4px;
-    font-weight:300;
-    margin-bottom:10px;
+font-size:1.9em; /* MÁS PEQUEÑO */
+letter-spacing:4px;
+margin-bottom:6px;
+font-weight:300;
 }
 
 .tagline{
-    font-style:italic;
-    color:#d0d0d0;
-    margin-bottom:30px;
+font-style:italic;
+font-size:1em;
+color:#d0d0d0;
+margin-bottom:25px;
 }
 
 .info{
-    font-size:0.95em;
-    color:#bdbdbd;
-    line-height:1.6;
-    margin-bottom:25px;
+font-size:0.95em;
+color:#bdbdbd;
+line-height:1.6;
+margin-bottom:20px;
 }
 
-/* REDES */
-
 .social-icons a{
-    margin:0 12px;
-    display:inline-block;
+margin:0 10px;
+display:inline-block;
 }
 
 .social-icons img{
-    width:26px;
-    filter:invert(1);
-    opacity:0.85;
-    transition:0.3s;
+width:24px;
+height:24px;
+filter:invert(1);
+opacity:0.85;
+transition:0.2s ease;
 }
 
 .social-icons img:hover{
-    opacity:1;
-    transform:scale(1.15);
+opacity:1;
+transform:scale(1.15);
 }
 
-/* MENÚ */
+/* BOTONES MENÚ */
 
-.menu-section{
-    padding:100px 20px;
+.menu-nav{
+margin-top:40px;
+background:rgba(20,20,20,0.85);
+padding:20px;
+border-radius:12px;
+display:flex;
+flex-wrap:wrap;
+justify-content:center;
+gap:15px;
+backdrop-filter:blur(8px);
+}
+
+.menu-nav a{
+text-decoration:none;
+color:white;
+padding:10px 18px;
+border:1px solid rgba(255,255,255,0.2);
+border-radius:30px;
+font-size:0.9em;
+letter-spacing:1px;
+transition:0.3s ease;
+}
+
+.menu-nav a:hover{
+background:white;
+color:#111;
+}
+
+/* SECCIONES */
+
+section{
+padding:80px 20px;
+background:#111;
 }
 
 .menu-container{
-    max-width:1100px;
-    margin:auto;
+max-width:900px;
+margin:auto;
 }
 
 .section-title{
-    text-align:center;
-    font-size:1.8em;
-    letter-spacing:4px;
-    margin:100px 0 50px;
+font-size:1.4em;
+letter-spacing:3px;
+margin-bottom:40px;
+text-align:center;
+color:#e5e5e5;
 }
 
-/* SUBCATEGORÍAS CON COLORES */
+/* LISTAS */
 
-.subcategory{
-    font-size:1.2em;
-    letter-spacing:3px;
-    margin:60px 0 25px;
+.menu-list{
+margin-bottom:40px;
 }
 
-.dorada{ color:#d4af37; }      /* Dorado elegante */
-.roja{ color:#b23a3a; }        /* Rojo vino */
-.trigo{ color:#c8a96a; }       /* Trigo cálido */
-
-.product-grid{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-    gap:30px;
+.menu-item{
+display:flex;
+justify-content:space-between;
+padding:8px 0;
+border-bottom:1px solid rgba(255,255,255,0.08);
+font-size:0.95em;
 }
 
-.product-card{
-    background:#1a1a1a;
-    padding:18px;
-    border-radius:12px;
-    transition:0.3s;
+.menu-category{
+margin-top:30px;
+margin-bottom:10px;
+font-weight:bold;
+letter-spacing:1px;
+color:#ccc;
 }
 
-.product-card:hover{
-    background:#222;
-}
+/* RESPONSIVE */
 
-.product-card img{
-    width:100%;
-    border-radius:10px;
-    transition:0.4s;
-    cursor:pointer;
+@media (max-width:600px){
+.logo{
+width:240px;
 }
-
-.product-card img:hover{
-    transform:scale(1.08);
+.brand-name{
+font-size:1.6em;
 }
-
-.product-name{
-    margin-top:15px;
-    font-weight:500;
+.menu-nav{
+gap:10px;
 }
-
-.product-desc{
-    font-size:0.85em;
-    color:#9c9c9c;
-    margin-top:6px;
-    line-height:1.4;
-}
-
-.price{
-    margin-top:8px;
-    color:#aaa;
-    font-size:0.9em;
-}
-
-@media(max-width:600px){
-    .logo{width:240px;}
 }
 
 </style>
@@ -179,11 +189,15 @@ body{
 
 <div class="hero-content">
 
-<img src="LogoPrincipal.png" class="logo">
+<img src="LogoPrincipal.png" alt="AvoHouse Logo" class="logo">
 
-<div class="brand-name">AvoHouse Pub</div>
+<div class="brand-name">
+AvoHouse Pub
+</div>
 
-<div class="tagline">Donde la música no compite con la conversación.</div>
+<div class="tagline">
+Donde la música no compite con la conversación.
+</div>
 
 <div class="info">
 Calle 27 No. 26-99<br>
@@ -193,94 +207,102 @@ Viernes y Sábado hasta 01:00
 </div>
 
 <div class="social-icons">
+
 <a href="https://wa.me/573026475174?text=Hola%20quiero%20información%20de%20AvoHouse" target="_blank">
 <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png">
 </a>
+
 <a href="https://www.instagram.com/avohouseguaviare" target="_blank">
 <img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png">
 </a>
+
 <a href="https://www.facebook.com/people/Avohouse-Guaviare/" target="_blank">
 <img src="https://cdn-icons-png.flaticon.com/512/733/733547.png">
 </a>
-<a href="https://www.google.com/maps/place/AvoHouse/@2.5601682,-72.6302689,18.04z" target="_blank">
+
+<a href="https://www.google.com/maps/place/AvoHouse/@2.5601682,-72.6302689,18.04z/data=!4m6!3m5!1s0x8e17770061568d37:0xa3e69e1cb3f9ce32!8m2!3d2.5596824!4d-72.6297883!16s%2Fg%2F11w2ml498l?entry=ttu" target="_blank">
 <img src="https://cdn-icons-png.flaticon.com/512/684/684908.png">
 </a>
+
+</div>
+
+<div class="menu-nav">
+<a href="#mezcladitas">Mezcladitas</a>
+<a href="#cocteles">Firma de la Casa</a>
+<a href="#cervezas">Cervezas</a>
+<a href="#sin-alcohol">Sin Alcohol, Con Intención</a>
 </div>
 
 </div>
 </header>
 
-<section class="menu-section">
+<!-- MEZCLADITAS -->
+<section id="mezcladitas">
 <div class="menu-container">
-
-<div class="section-title">La Barra AH</div>
-
-<div class="subcategory dorada">DORADA</div>
-<div class="product-grid">
-<div class="product-card"><img src="producto.png"><div class="product-name">ICEBEER</div><div class="price">$20.000</div></div>
-<div class="product-card"><img src="producto.png"><div class="product-name">PARA EL CALOR</div><div class="price">$20.000</div></div>
-<div class="product-card"><img src="producto.png"><div class="product-name">ALOHA!!!</div><div class="price">$20.000</div></div>
-<div class="product-card"><img src="producto.png"><div class="product-name">MÉXICO AZUL</div><div class="price">$21.000</div></div>
+<div class="section-title">Mezcladitas</div>
+<!-- Aquí pegas las mezcladitas de tu PDF -->
 </div>
+</section>
 
-<div class="subcategory roja">ROJA</div>
-<div class="product-grid">
-<div class="product-card"><img src="producto.png"><div class="product-name">PODEROSA</div><div class="price">$20.000</div></div>
-<div class="product-card"><img src="producto.png"><div class="product-name">TROPICAL</div><div class="price">$20.000</div></div>
-<div class="product-card"><img src="producto.png"><div class="product-name">GOMELA</div><div class="price">$21.000</div></div>
-<div class="product-card"><img src="producto.png"><div class="product-name">¡VIVA EL DIVO!</div><div class="price">$21.000</div></div>
-</div>
-
-<div class="subcategory trigo">TRIGO</div>
-<div class="product-grid">
-<div class="product-card"><img src="producto.png"><div class="product-name">MULATA</div><div class="price">$22.000</div></div>
-<div class="product-card"><img src="producto.png"><div class="product-name">PERLA NEGRA</div><div class="price">$22.000</div></div>
-<div class="product-card"><img src="producto.png"><div class="product-name">DRACARYS</div><div class="price">$22.000</div></div>
-<div class="product-card"><img src="producto.png"><div class="product-name">FUEGO VALYRIO</div><div class="price">$22.000</div></div>
-</div>
-
-<div class="section-title">Clásicos & Espuma</div>
-
-<div class="subcategory">NACIONALES</div>
-<div class="product-grid">
-<div class="product-card"><div class="product-name">3 Cordilleras Rosada</div><div class="price">$3.500</div></div>
-<div class="product-card"><div class="product-name">Águila</div><div class="price">$4.000</div></div>
-<div class="product-card"><div class="product-name">Águila Light</div><div class="price">$4.000</div></div>
-<div class="product-card"><div class="product-name">Club Colombia Dorada</div><div class="price">$4.500</div></div>
-<div class="product-card"><div class="product-name">Club Colombia Roja</div><div class="price">$4.500</div></div>
-<div class="product-card"><div class="product-name">Club Colombia Trigo</div><div class="price">$4.500</div></div>
-<div class="product-card"><div class="product-name">Costeña</div><div class="price">$4.000</div></div>
-<div class="product-card"><div class="product-name">Póker</div><div class="price">$4.000</div></div>
-</div>
-
-<div class="subcategory">EXTRANJERAS</div>
-<div class="product-grid">
-<div class="product-card"><div class="product-name">Budweiser</div><div class="price">$4.500</div></div>
-<div class="product-card"><div class="product-name">Corona</div><div class="price">$8.000</div></div>
-<div class="product-card"><div class="product-name">Coronita</div><div class="price">$4.500</div></div>
-<div class="product-card"><div class="product-name">Stella Artois</div><div class="price">$7.000</div></div>
-</div>
-
+<!-- FIRMA DE LA CASA -->
+<section id="cocteles">
+<div class="menu-container">
 <div class="section-title">Firma de la Casa</div>
-<div class="product-grid">
-<div class="product-card"><div class="product-name">Corona Día</div><div class="price">$18.000</div></div>
-<div class="product-card"><div class="product-name">Corona Tarde</div><div class="price">$18.000</div></div>
-<div class="product-card"><div class="product-name">Corona Noche</div><div class="price">$18.000</div></div>
-<div class="product-card"><div class="product-name">Entropía</div><div class="price">$18.000</div></div>
-<div class="product-card"><div class="product-name">Explosión Solar</div><div class="price">$18.000</div></div>
-<div class="product-card"><div class="product-name">Fusión Naranja</div><div class="price">$18.000</div></div>
-<div class="product-card"><div class="product-name">Gravedad Rosa</div><div class="price">$18.000</div></div>
-<div class="product-card"><div class="product-name">El Profe</div><div class="price">$18.000</div></div>
-<div class="product-card"><div class="product-name">Soda Especial</div><div class="price">$10.000</div></div>
+
+<div class="menu-list">
+<div class="menu-item"><span>Corona Día</span><span>$18.000</span></div>
+<div class="menu-item"><span>Corona Tarde</span><span>$18.000</span></div>
+<div class="menu-item"><span>Corona Noche</span><span>$18.000</span></div>
+<div class="menu-item"><span>Entropía</span><span>$18.000</span></div>
+<div class="menu-item"><span>Explosión Solar</span><span>$18.000</span></div>
+<div class="menu-item"><span>Fusión Naranja</span><span>$18.000</span></div>
+<div class="menu-item"><span>Gravedad Rosa</span><span>$18.000</span></div>
+<div class="menu-item"><span>El Profe</span><span>$18.000</span></div>
 </div>
 
+</div>
+</section>
+
+<!-- CERVEZAS -->
+<section id="cervezas">
+<div class="menu-container">
+<div class="section-title">Cervezas</div>
+
+<div class="menu-category">Nacionales</div>
+<div class="menu-list">
+<div class="menu-item"><span>3 Cordilleras Rosada</span><span>$3.500</span></div>
+<div class="menu-item"><span>Águila</span><span>$4.000</span></div>
+<div class="menu-item"><span>Águila Light</span><span>$4.000</span></div>
+<div class="menu-item"><span>Club Colombia Dorada</span><span>$4.500</span></div>
+<div class="menu-item"><span>Club Colombia Roja</span><span>$4.500</span></div>
+<div class="menu-item"><span>Club Colombia Trigo</span><span>$4.500</span></div>
+<div class="menu-item"><span>Costeña</span><span>$4.000</span></div>
+<div class="menu-item"><span>Póker</span><span>$4.000</span></div>
+</div>
+
+<div class="menu-category">Extranjeras</div>
+<div class="menu-list">
+<div class="menu-item"><span>Budweiser</span><span>$4.500</span></div>
+<div class="menu-item"><span>Corona</span><span>$8.000</span></div>
+<div class="menu-item"><span>Coronita</span><span>$4.500</span></div>
+<div class="menu-item"><span>Stella Artois</span><span>$7.000</span></div>
+</div>
+
+</div>
+</section>
+
+<!-- SIN ALCOHOL -->
+<section id="sin-alcohol">
+<div class="menu-container">
 <div class="section-title">Sin Alcohol, Con Intención</div>
-<div class="product-grid">
-<div class="product-card"><div class="product-name">Agua</div><div class="price">$4.000</div></div>
-<div class="product-card"><div class="product-name">Coca-Cola</div><div class="price">$4.500</div></div>
-<div class="product-card"><div class="product-name">Electrolit</div><div class="price">$12.000</div></div>
-<div class="product-card"><div class="product-name">Ginger Ale</div><div class="price">$4.000</div></div>
-<div class="product-card"><div class="product-name">Soda</div><div class="price">$4.000</div></div>
+
+<div class="menu-list">
+<div class="menu-item"><span>Soda Especial</span><span>$10.000</span></div>
+<div class="menu-item"><span>Agua</span><span>$4.000</span></div>
+<div class="menu-item"><span>Coca-Cola</span><span>$4.500</span></div>
+<div class="menu-item"><span>Electrolit</span><span>$12.000</span></div>
+<div class="menu-item"><span>Ginger Ale</span><span>$4.000</span></div>
+<div class="menu-item"><span>Soda</span><span>$4.000</span></div>
 </div>
 
 </div>
