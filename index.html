@@ -19,7 +19,7 @@ color:white;
 background:url('Fondo.png') center/cover fixed no-repeat;
 }
 
-/* CAPA OSCURA SUAVE */
+/* Capa oscura elegante */
 body::before{
 content:"";
 position:fixed;
@@ -31,25 +31,21 @@ background:rgba(0,0,0,0.75);
 z-index:-1;
 }
 
-/* CONTENEDOR CENTRAL */
+/* CONTENIDO PRINCIPAL */
 
-.container{
-max-width:800px;
-margin:80px auto;
-background:rgba(20,20,20,0.6);
-padding:40px;
-border-radius:15px;
-backdrop-filter:blur(12px);
+.main{
 text-align:center;
+padding:60px 20px 40px 20px;
 }
 
 .logo{
-width:330px;
+width:340px;
+max-width:90%;
 margin-bottom:15px;
 }
 
 .brand{
-font-size:1.7em;
+font-size:1.6em;
 letter-spacing:4px;
 margin-bottom:8px;
 }
@@ -58,33 +54,41 @@ margin-bottom:8px;
 font-style:italic;
 color:#ccc;
 margin-bottom:25px;
+font-size:0.95em;
 }
 
 .info{
 color:#bbb;
 line-height:1.6;
-margin-bottom:25px;
+margin-bottom:30px;
+font-size:0.9em;
 }
 
-/* BOTONES */
+/* BOTONES DESLIZABLES */
 
 .menu-nav{
 display:flex;
-justify-content:center;
-gap:15px;
-flex-wrap:nowrap;
-margin-top:20px;
+overflow-x:auto;
+gap:12px;
+padding:10px 0 20px 0;
+scroll-snap-type:x mandatory;
+}
+
+.menu-nav::-webkit-scrollbar{
+display:none;
 }
 
 .menu-nav a{
+flex:0 0 auto;
+scroll-snap-align:start;
 text-decoration:none;
 color:white;
 padding:12px 20px;
-border:1px solid rgba(255,255,255,0.2);
+border:1px solid rgba(255,255,255,0.25);
 border-radius:30px;
-font-size:0.9em;
-transition:0.3s;
+font-size:0.85em;
 white-space:nowrap;
+transition:0.3s;
 }
 
 .menu-nav a:hover{
@@ -92,15 +96,17 @@ background:white;
 color:#111;
 }
 
+/* REDES */
+
 .social{
 margin-top:25px;
 }
 
 .social img{
 width:24px;
-margin:0 8px;
+margin:0 10px;
 filter:invert(1);
-opacity:0.8;
+opacity:0.85;
 transition:0.2s;
 }
 
@@ -109,24 +115,37 @@ opacity:1;
 transform:scale(1.15);
 }
 
+/* RESPONSIVE AJUSTES */
+
+@media (max-width:480px){
+.logo{
+width:280px;
+}
+.brand{
+font-size:1.4em;
+}
+}
+
 </style>
 </head>
 
 <body>
 
-<div class="container">
+<div class="main">
 
 <img src="LogoPrincipal.png" class="logo">
 
 <div class="brand">AvoHouse Pub</div>
 
-<div class="tagline">Donde la música no compite con la conversación.</div>
+<div class="tagline">
+Donde la música no compite con la conversación.
+</div>
 
 <div class="info">
 Calle 27 No. 26-99<br>
 San José del Guaviare<br><br>
-Abierto Dom–Jue 16:00 – 00:00<br>
-Viernes y Sábado hasta 01:00
+Dom–Jue 16:00 – 00:00<br>
+Vie–Sáb hasta 01:00
 </div>
 
 <div class="menu-nav">
