@@ -48,14 +48,10 @@ body{
     max-width:650px;
 }
 
-/* LOGO MÁS GRANDE */
-
 .logo{
     width:240px;
     margin-bottom:20px;
 }
-
-/* NOMBRE */
 
 .brand-name{
     font-size:2.3em;
@@ -64,16 +60,12 @@ body{
     font-weight:300;
 }
 
-/* FRASE */
-
 .tagline{
     font-style:italic;
     font-size:1em;
     color:#d0d0d0;
     margin-bottom:30px;
 }
-
-/* INFO */
 
 .info{
     font-size:0.95em;
@@ -106,37 +98,66 @@ body{
 
 .menu-section{
     background:#111;
-    padding:100px 20px;
+    padding:80px 20px;
 }
 
 .menu-container{
-    max-width:750px;
+    max-width:900px;
     margin:auto;
-    text-align:left;
 }
 
-.menu-section h2{
-    font-size:1.5em;
-    font-weight:300;
+/* BOTONES DE SECCIÓN */
+
+.section-title{
+    font-size:1.4em;
     letter-spacing:3px;
-    margin:70px 0 25px;
-    border-bottom:1px solid rgba(255,255,255,0.1);
-    padding-bottom:12px;
+    margin:60px 0 30px;
+    text-align:center;
 }
 
-.menu-item{
-    display:flex;
-    justify-content:space-between;
-    margin-bottom:18px;
+/* PRODUCTOS */
+
+.product-grid{
+    display:grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap:30px;
+}
+
+.product-card{
+    background:#1a1a1a;
+    padding:15px;
+    border-radius:10px;
+    text-align:center;
+    transition:0.3s ease;
+}
+
+.product-card:hover{
+    background:#222;
+}
+
+.product-card img{
+    width:100%;
+    border-radius:8px;
+    transition:0.4s ease;
+    cursor:pointer;
+}
+
+/* EFECTO ZOOM */
+
+.product-card img:hover{
+    transform:scale(1.08);
+}
+
+.product-name{
+    margin-top:15px;
     font-size:1em;
-    color:#e0e0e0;
 }
 
-.menu-item span{
-    color:#9c9c9c;
+.price{
+    color:#aaa;
+    font-size:0.9em;
+    margin-top:5px;
 }
-
-/* RESPONSIVE */
 
 @media (max-width:600px){
     .logo{
@@ -203,44 +224,55 @@ body{
 
     <div class="menu-container">
 
-        <h2>La Barra AH</h2>
+        <div class="section-title">La Barra AH</div>
 
-        <div class="menu-item">
-            Mezcladita 1 <span>$XX.XXX</span>
+        <div class="product-grid">
+
+            <div class="product-card">
+                <img src="producto.png" alt="Producto">
+                <div class="product-name">Mezcladita AH</div>
+                <div class="price">$XX.XXX</div>
+            </div>
+
         </div>
 
-        <div class="menu-item">
-            Mezcladita 2 <span>$XX.XXX</span>
+
+        <div class="section-title">Firma de la Casa</div>
+
+        <div class="product-grid">
+
+            <div class="product-card">
+                <img src="producto.png" alt="Producto">
+                <div class="product-name">Cóctel Especial</div>
+                <div class="price">$XX.XXX</div>
+            </div>
+
         </div>
 
-        <h2>Firma de la Casa</h2>
 
-        <div class="menu-item">
-            Cóctel Especial 1 <span>$XX.XXX</span>
+        <div class="section-title">Clásicos & Espuma</div>
+
+        <div class="product-grid">
+
+            <div class="product-card">
+                <img src="producto.png" alt="Producto">
+                <div class="product-name">Cerveza</div>
+                <div class="price">$X.XXX</div>
+            </div>
+
         </div>
 
-        <div class="menu-item">
-            Cóctel Especial 2 <span>$XX.XXX</span>
-        </div>
 
-        <h2>Clásicos & Espuma</h2>
+        <div class="section-title">Sin Alcohol, Con Intención</div>
 
-        <div class="menu-item">
-            Cerveza Nacional <span>$X.XXX</span>
-        </div>
+        <div class="product-grid">
 
-        <div class="menu-item">
-            Cerveza Importada <span>$X.XXX</span>
-        </div>
+            <div class="product-card">
+                <img src="producto.png" alt="Producto">
+                <div class="product-name">Refresco</div>
+                <div class="price">$X.XXX</div>
+            </div>
 
-        <h2>Sin Alcohol, Con Intención</h2>
-
-        <div class="menu-item">
-            Soda <span>$X.XXX</span>
-        </div>
-
-        <div class="menu-item">
-            Agua <span>$X.XXX</span>
         </div>
 
     </div>
