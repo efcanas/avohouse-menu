@@ -14,9 +14,18 @@ body {
     scroll-behavior: smooth;
 }
 
-    .logo {
-    width: 160px;
+    .logo-container {
+    background: #f5f2eb;
+    display: inline-block;
+    padding: 18px 30px;
+    border-radius: 14px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.4);
     margin-bottom: 20px;
+}
+
+.logo {
+    width: 170px;
+    display: block;
 }
     
 nav {
@@ -125,7 +134,9 @@ footer {
 </nav>
 
 <header>
-    <img src="JPG ALTA RESOLUCION (1).JPG" alt="AvoHouse Logo" class="logo">
+    <div class="logo-container">
+        <img src="JPG ALTA RESOLUCION (1).JPG" alt="AvoHouse Logo" class="logo">
+    </div>
     <div class="tagline">Donde la música no compite con la conversación.</div>
 </header>
 
