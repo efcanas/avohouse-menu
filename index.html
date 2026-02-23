@@ -11,111 +11,80 @@
 margin:0;
 padding:0;
 box-sizing:border-box;
-scroll-behavior:smooth;
 }
 
 body{
 font-family:'Helvetica Neue', Arial, sans-serif;
-background:#111;
 color:white;
+background:url('Fondo.png') center/cover fixed no-repeat;
 }
 
-/* HERO */
-
-.hero{
-position:relative;
-min-height:100vh;
-background: url('Fondo.png') center/cover fixed no-repeat;
-display:flex;
-align-items:flex-start;
-justify-content:center;
-text-align:center;
-padding-top:60px;
-}
-
-.overlay{
-position:absolute;
-width:100%;
-height:100%;
-background:rgba(0,0,0,0.72);
+/* CAPA OSCURA SUAVE */
+body::before{
+content:"";
+position:fixed;
 top:0;
 left:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,0.75);
+z-index:-1;
 }
 
-.hero-content{
-position:relative;
-z-index:2;
-max-width:650px;
-padding:20px;
+/* CONTENEDOR CENTRAL */
+
+.container{
+max-width:800px;
+margin:80px auto;
+background:rgba(20,20,20,0.6);
+padding:40px;
+border-radius:15px;
+backdrop-filter:blur(12px);
+text-align:center;
 }
 
 .logo{
-width:300px; /* MÁS GRANDE */
+width:330px;
 margin-bottom:15px;
 }
 
-.brand-name{
-font-size:1.9em; /* MÁS PEQUEÑO */
+.brand{
+font-size:1.7em;
 letter-spacing:4px;
-margin-bottom:6px;
-font-weight:300;
+margin-bottom:8px;
 }
 
 .tagline{
 font-style:italic;
-font-size:1em;
-color:#d0d0d0;
+color:#ccc;
 margin-bottom:25px;
 }
 
 .info{
-font-size:0.95em;
-color:#bdbdbd;
+color:#bbb;
 line-height:1.6;
-margin-bottom:20px;
+margin-bottom:25px;
 }
 
-.social-icons a{
-margin:0 10px;
-display:inline-block;
-}
-
-.social-icons img{
-width:24px;
-height:24px;
-filter:invert(1);
-opacity:0.85;
-transition:0.2s ease;
-}
-
-.social-icons img:hover{
-opacity:1;
-transform:scale(1.15);
-}
-
-/* BOTONES MENÚ */
+/* BOTONES */
 
 .menu-nav{
-margin-top:40px;
-background:rgba(20,20,20,0.85);
-padding:20px;
-border-radius:12px;
 display:flex;
-flex-wrap:wrap;
 justify-content:center;
 gap:15px;
-backdrop-filter:blur(8px);
+flex-wrap:nowrap;
+margin-top:20px;
 }
 
 .menu-nav a{
 text-decoration:none;
 color:white;
-padding:10px 18px;
+padding:12px 20px;
 border:1px solid rgba(255,255,255,0.2);
 border-radius:30px;
 font-size:0.9em;
-letter-spacing:1px;
-transition:0.3s ease;
+transition:0.3s;
+white-space:nowrap;
 }
 
 .menu-nav a:hover{
@@ -123,60 +92,21 @@ background:white;
 color:#111;
 }
 
-/* SECCIONES */
-
-section{
-padding:80px 20px;
-background:#111;
+.social{
+margin-top:25px;
 }
 
-.menu-container{
-max-width:900px;
-margin:auto;
+.social img{
+width:24px;
+margin:0 8px;
+filter:invert(1);
+opacity:0.8;
+transition:0.2s;
 }
 
-.section-title{
-font-size:1.4em;
-letter-spacing:3px;
-margin-bottom:40px;
-text-align:center;
-color:#e5e5e5;
-}
-
-/* LISTAS */
-
-.menu-list{
-margin-bottom:40px;
-}
-
-.menu-item{
-display:flex;
-justify-content:space-between;
-padding:8px 0;
-border-bottom:1px solid rgba(255,255,255,0.08);
-font-size:0.95em;
-}
-
-.menu-category{
-margin-top:30px;
-margin-bottom:10px;
-font-weight:bold;
-letter-spacing:1px;
-color:#ccc;
-}
-
-/* RESPONSIVE */
-
-@media (max-width:600px){
-.logo{
-width:240px;
-}
-.brand-name{
-font-size:1.6em;
-}
-.menu-nav{
-gap:10px;
-}
+.social img:hover{
+opacity:1;
+transform:scale(1.15);
 }
 
 </style>
@@ -184,20 +114,13 @@ gap:10px;
 
 <body>
 
-<header class="hero">
-<div class="overlay"></div>
+<div class="container">
 
-<div class="hero-content">
+<img src="LogoPrincipal.png" class="logo">
 
-<img src="LogoPrincipal.png" alt="AvoHouse Logo" class="logo">
+<div class="brand">AvoHouse Pub</div>
 
-<div class="brand-name">
-AvoHouse Pub
-</div>
-
-<div class="tagline">
-Donde la música no compite con la conversación.
-</div>
+<div class="tagline">Donde la música no compite con la conversación.</div>
 
 <div class="info">
 Calle 27 No. 26-99<br>
@@ -206,107 +129,29 @@ Abierto Dom–Jue 16:00 – 00:00<br>
 Viernes y Sábado hasta 01:00
 </div>
 
-<div class="social-icons">
+<div class="menu-nav">
+<a href="mezcladitas.html">Mezcladitas</a>
+<a href="firma.html">Firma de la Casa</a>
+<a href="cervezas.html">Cervezas</a>
+<a href="sinalcohol.html">Sin Alcohol</a>
+</div>
 
-<a href="https://wa.me/573026475174?text=Hola%20quiero%20información%20de%20AvoHouse" target="_blank">
+<div class="social">
+<a href="https://wa.me/573026475174" target="_blank">
 <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png">
 </a>
-
 <a href="https://www.instagram.com/avohouseguaviare" target="_blank">
 <img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png">
 </a>
-
 <a href="https://www.facebook.com/people/Avohouse-Guaviare/" target="_blank">
 <img src="https://cdn-icons-png.flaticon.com/512/733/733547.png">
 </a>
-
-<a href="https://www.google.com/maps/place/AvoHouse/@2.5601682,-72.6302689,18.04z/data=!4m6!3m5!1s0x8e17770061568d37:0xa3e69e1cb3f9ce32!8m2!3d2.5596824!4d-72.6297883!16s%2Fg%2F11w2ml498l?entry=ttu" target="_blank">
+<a href="https://www.google.com/maps/place/AvoHouse" target="_blank">
 <img src="https://cdn-icons-png.flaticon.com/512/684/684908.png">
 </a>
-
-</div>
-
-<div class="menu-nav">
-<a href="#mezcladitas">Mezcladitas</a>
-<a href="#cocteles">Firma de la Casa</a>
-<a href="#cervezas">Cervezas</a>
-<a href="#sin-alcohol">Sin Alcohol, Con Intención</a>
 </div>
 
 </div>
-</header>
-
-<!-- MEZCLADITAS -->
-<section id="mezcladitas">
-<div class="menu-container">
-<div class="section-title">Mezcladitas</div>
-<!-- Aquí pegas las mezcladitas de tu PDF -->
-</div>
-</section>
-
-<!-- FIRMA DE LA CASA -->
-<section id="cocteles">
-<div class="menu-container">
-<div class="section-title">Firma de la Casa</div>
-
-<div class="menu-list">
-<div class="menu-item"><span>Corona Día</span><span>$18.000</span></div>
-<div class="menu-item"><span>Corona Tarde</span><span>$18.000</span></div>
-<div class="menu-item"><span>Corona Noche</span><span>$18.000</span></div>
-<div class="menu-item"><span>Entropía</span><span>$18.000</span></div>
-<div class="menu-item"><span>Explosión Solar</span><span>$18.000</span></div>
-<div class="menu-item"><span>Fusión Naranja</span><span>$18.000</span></div>
-<div class="menu-item"><span>Gravedad Rosa</span><span>$18.000</span></div>
-<div class="menu-item"><span>El Profe</span><span>$18.000</span></div>
-</div>
-
-</div>
-</section>
-
-<!-- CERVEZAS -->
-<section id="cervezas">
-<div class="menu-container">
-<div class="section-title">Cervezas</div>
-
-<div class="menu-category">Nacionales</div>
-<div class="menu-list">
-<div class="menu-item"><span>3 Cordilleras Rosada</span><span>$3.500</span></div>
-<div class="menu-item"><span>Águila</span><span>$4.000</span></div>
-<div class="menu-item"><span>Águila Light</span><span>$4.000</span></div>
-<div class="menu-item"><span>Club Colombia Dorada</span><span>$4.500</span></div>
-<div class="menu-item"><span>Club Colombia Roja</span><span>$4.500</span></div>
-<div class="menu-item"><span>Club Colombia Trigo</span><span>$4.500</span></div>
-<div class="menu-item"><span>Costeña</span><span>$4.000</span></div>
-<div class="menu-item"><span>Póker</span><span>$4.000</span></div>
-</div>
-
-<div class="menu-category">Extranjeras</div>
-<div class="menu-list">
-<div class="menu-item"><span>Budweiser</span><span>$4.500</span></div>
-<div class="menu-item"><span>Corona</span><span>$8.000</span></div>
-<div class="menu-item"><span>Coronita</span><span>$4.500</span></div>
-<div class="menu-item"><span>Stella Artois</span><span>$7.000</span></div>
-</div>
-
-</div>
-</section>
-
-<!-- SIN ALCOHOL -->
-<section id="sin-alcohol">
-<div class="menu-container">
-<div class="section-title">Sin Alcohol, Con Intención</div>
-
-<div class="menu-list">
-<div class="menu-item"><span>Soda Especial</span><span>$10.000</span></div>
-<div class="menu-item"><span>Agua</span><span>$4.000</span></div>
-<div class="menu-item"><span>Coca-Cola</span><span>$4.500</span></div>
-<div class="menu-item"><span>Electrolit</span><span>$12.000</span></div>
-<div class="menu-item"><span>Ginger Ale</span><span>$4.000</span></div>
-<div class="menu-item"><span>Soda</span><span>$4.000</span></div>
-</div>
-
-</div>
-</section>
 
 </body>
 </html>
