@@ -136,29 +136,35 @@ footer {
     <a href="#contacto">Contacto</a>
 </nav>
 
-<header>
+header {
+    padding: 120px 20px 60px;
+    text-align: center;
+}
 
-    <img src="LogoPrincipal.png" alt="AvoHouse Logo" class="logo">
+.info {
+    margin-top: 20px;
+    font-size: 0.95em;
+    color: #bdbdbd;
+    line-height: 1.6;
+}
 
-    <div class="tagline">
-        Donde la música no compite con la conversación.
-    </div>
+.whatsapp-header {
+    display: inline-block;
+    margin-top: 25px;
+    background-color: #25D366;
+    color: white;
+    padding: 13px 30px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-size: 0.9em;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.4);
+    transition: 0.2s ease;
+}
 
-    <div class="info">
-        Calle 27 No. 26-99<br>
-        San José del Guaviare<br><br>
-        Abierto Dom–Jue 16:00 – 00:00<br>
-        Viernes y Sábado hasta 01:00
-    </div>
-
-    <a class="whatsapp-header" 
-       href="https://wa.me/573026475174?text=Hola%20quiero%20reservar%20en%20AvoHouse" 
-       target="_blank">
-       Reservar por WhatsApp
-    </a>
-
-</header>
-
+.whatsapp-header:hover {
+    background-color: #1ebe5d;
+    transform: translateY(-2px);
+}
 <div id="mezcladitas" class="section">
     <h2>Mezcladitas</h2>
 
