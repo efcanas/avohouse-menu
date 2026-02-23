@@ -33,28 +33,45 @@ z-index:-1;
 /* HEADER */
 
 .header{
-position:sticky;
+position:fixed;
 top:0;
+left:0;
+width:100%;
 z-index:1000;
 text-align:center;
-padding:20px 20px 10px 20px;
+padding:25px 20px 15px 20px;
 background:rgba(0,0,0,0.85);
 backdrop-filter:blur(8px);
 border-bottom:1px solid rgba(255,255,255,0.08);
+transition:all 0.3s ease;
+}
+
+.header.shrink{
+padding:10px 20px 5px 20px;
 }
 
 .logo{
-width:280px;
+width:260px;
 max-width:90%;
-margin-bottom:10px;
+margin-bottom:8px;
+transition:all 0.3s ease;
+}
+
+.header.shrink .logo{
+width:170px;
 }
 
 .title{
-font-size:1.6em;
+font-size:1.5em;
 letter-spacing:3px;
-margin-bottom:20px;
+margin-bottom:15px;
+transition:all 0.3s ease;
 }
 
+.header.shrink .title{
+font-size:1.1em;
+margin-bottom:8px;
+}
 /* NAV */
 
 .menu-nav{
@@ -90,7 +107,7 @@ color:#111;
 
 .container{
 max-width:1100px;
-margin:160px auto 80px auto;
+margin:200px auto 80px auto;
 padding:0 20px;
 }
 
@@ -294,5 +311,16 @@ font-size:1.3em;
 
 </div>
 
+  <script>
+window.addEventListener("scroll", function(){
+    const header = document.querySelector(".header");
+    if(window.scrollY > 80){
+        header.classList.add("shrink");
+    } else {
+        header.classList.remove("shrink");
+    }
+});
+</script>
+  
 </body>
 </html>
