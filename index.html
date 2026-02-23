@@ -7,15 +7,11 @@
 
 <style>
 
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-}
+*{margin:0;padding:0;box-sizing:border-box;}
 
 body{
     font-family:'Helvetica Neue', Arial, sans-serif;
-    background-color:#111;
+    background:#111;
     color:white;
 }
 
@@ -24,7 +20,7 @@ body{
 .hero{
     position:relative;
     height:100vh;
-    background: url('Fondo.png') center/cover no-repeat;
+    background:url('Fondo.png') center/cover no-repeat;
     display:flex;
     align-items:center;
     justify-content:center;
@@ -35,35 +31,34 @@ body{
     position:absolute;
     width:100%;
     height:100%;
-    background:rgba(0,0,0,0.72);
-    top:0;
-    left:0;
+    background:rgba(0,0,0,0.75);
 }
 
 .hero-content{
     position:relative;
     z-index:2;
+    max-width:700px;
     padding:20px;
-    max-width:650px;
 }
 
 /* LOGO MÁS GRANDE */
 
 .logo{
-    width:280px;
+    width:320px;
     margin-bottom:20px;
 }
 
+/* MARCA */
+
 .brand-name{
-    font-size:2.3em;
+    font-size:2.5em;
     letter-spacing:4px;
-    margin-bottom:8px;
     font-weight:300;
+    margin-bottom:10px;
 }
 
 .tagline{
     font-style:italic;
-    font-size:1em;
     color:#d0d0d0;
     margin-bottom:30px;
 }
@@ -84,10 +79,9 @@ body{
 
 .social-icons img{
     width:26px;
-    height:26px;
     filter:invert(1);
     opacity:0.85;
-    transition:0.2s ease;
+    transition:0.3s;
 }
 
 .social-icons img:hover{
@@ -98,36 +92,36 @@ body{
 /* MENÚ */
 
 .menu-section{
-    background:#111;
     padding:100px 20px;
 }
 
 .menu-container{
-    max-width:1000px;
+    max-width:1100px;
     margin:auto;
 }
 
 .section-title{
-    font-size:1.6em;
-    letter-spacing:3px;
-    margin:80px 0 40px;
     text-align:center;
+    font-size:1.8em;
+    letter-spacing:4px;
+    margin:100px 0 50px;
 }
 
-/* SUBCATEGORÍAS */
+/* SUBCATEGORÍAS CON COLORES */
 
 .subcategory{
     font-size:1.2em;
-    letter-spacing:2px;
-    margin:50px 0 25px;
-    color:#ccc;
+    letter-spacing:3px;
+    margin:60px 0 25px;
 }
 
-/* GRID PRODUCTOS */
+.dorada{ color:#d4af37; }      /* Dorado elegante */
+.roja{ color:#b23a3a; }        /* Rojo vino */
+.trigo{ color:#c8a96a; }       /* Trigo cálido */
 
 .product-grid{
     display:grid;
-    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
     gap:30px;
 }
 
@@ -135,7 +129,7 @@ body{
     background:#1a1a1a;
     padding:18px;
     border-radius:12px;
-    transition:0.3s ease;
+    transition:0.3s;
 }
 
 .product-card:hover{
@@ -145,7 +139,7 @@ body{
 .product-card img{
     width:100%;
     border-radius:10px;
-    transition:0.4s ease;
+    transition:0.4s;
     cursor:pointer;
 }
 
@@ -155,7 +149,6 @@ body{
 
 .product-name{
     margin-top:15px;
-    font-size:1em;
     font-weight:500;
 }
 
@@ -168,14 +161,12 @@ body{
 
 .price{
     margin-top:8px;
-    font-size:0.9em;
     color:#aaa;
+    font-size:0.9em;
 }
 
-@media (max-width:600px){
-    .logo{
-        width:220px;
-    }
+@media(max-width:600px){
+    .logo{width:240px;}
 }
 
 </style>
@@ -184,154 +175,115 @@ body{
 <body>
 
 <header class="hero">
+<div class="overlay"></div>
 
-    <div class="overlay"></div>
+<div class="hero-content">
 
-    <div class="hero-content">
+<img src="LogoPrincipal.png" class="logo">
 
-        <img src="LogoPrincipal.png" alt="AvoHouse Logo" class="logo">
+<div class="brand-name">AvoHouse Pub</div>
 
-        <div class="brand-name">
-            AvoHouse Pub
-        </div>
+<div class="tagline">Donde la música no compite con la conversación.</div>
 
-        <div class="tagline">
-            Donde la música no compite con la conversación.
-        </div>
+<div class="info">
+Calle 27 No. 26-99<br>
+San José del Guaviare<br><br>
+Abierto Dom–Jue 16:00 – 00:00<br>
+Viernes y Sábado hasta 01:00
+</div>
 
-        <div class="info">
-            Calle 27 No. 26-99<br>
-            San José del Guaviare<br><br>
-            Abierto Dom–Jue 16:00 – 00:00<br>
-            Viernes y Sábado hasta 01:00
-        </div>
+<div class="social-icons">
+<a href="https://wa.me/573026475174?text=Hola%20quiero%20información%20de%20AvoHouse" target="_blank">
+<img src="https://cdn-icons-png.flaticon.com/512/733/733585.png">
+</a>
+<a href="https://www.instagram.com/avohouseguaviare" target="_blank">
+<img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png">
+</a>
+<a href="https://www.facebook.com/people/Avohouse-Guaviare/" target="_blank">
+<img src="https://cdn-icons-png.flaticon.com/512/733/733547.png">
+</a>
+<a href="https://www.google.com/maps/place/AvoHouse/@2.5601682,-72.6302689,18.04z" target="_blank">
+<img src="https://cdn-icons-png.flaticon.com/512/684/684908.png">
+</a>
+</div>
 
-        <div class="social-icons">
-            <a href="https://wa.me/573026475174?text=Hola%20quiero%20información%20de%20AvoHouse" target="_blank">
-                <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png">
-            </a>
-            <a href="https://www.instagram.com/avohouseguaviare" target="_blank">
-                <img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png">
-            </a>
-            <a href="https://www.facebook.com/people/Avohouse-Guaviare/" target="_blank">
-                <img src="https://cdn-icons-png.flaticon.com/512/733/733547.png">
-            </a>
-            <a href="https://www.google.com/maps/place/AvoHouse/@2.5601682,-72.6302689,18.04z" target="_blank">
-                <img src="https://cdn-icons-png.flaticon.com/512/684/684908.png">
-            </a>
-        </div>
-
-    </div>
-
+</div>
 </header>
 
 <section class="menu-section">
+<div class="menu-container">
 
-    <div class="menu-container">
+<div class="section-title">La Barra AH</div>
 
-        <div class="section-title">La Barra AH</div>
+<div class="subcategory dorada">DORADA</div>
+<div class="product-grid">
+<div class="product-card"><img src="producto.png"><div class="product-name">ICEBEER</div><div class="price">$20.000</div></div>
+<div class="product-card"><img src="producto.png"><div class="product-name">PARA EL CALOR</div><div class="price">$20.000</div></div>
+<div class="product-card"><img src="producto.png"><div class="product-name">ALOHA!!!</div><div class="price">$20.000</div></div>
+<div class="product-card"><img src="producto.png"><div class="product-name">MÉXICO AZUL</div><div class="price">$21.000</div></div>
+</div>
 
-        <div class="subcategory">DORADA</div>
-        <div class="product-grid">
+<div class="subcategory roja">ROJA</div>
+<div class="product-grid">
+<div class="product-card"><img src="producto.png"><div class="product-name">PODEROSA</div><div class="price">$20.000</div></div>
+<div class="product-card"><img src="producto.png"><div class="product-name">TROPICAL</div><div class="price">$20.000</div></div>
+<div class="product-card"><img src="producto.png"><div class="product-name">GOMELA</div><div class="price">$21.000</div></div>
+<div class="product-card"><img src="producto.png"><div class="product-name">¡VIVA EL DIVO!</div><div class="price">$21.000</div></div>
+</div>
 
-            <div class="product-card">
-                <img src="producto.png">
-                <div class="product-name">ICEBEER</div>
-                <div class="product-desc">Vodka, naranja, Smirnoff Ice</div>
-                <div class="price">$20.000</div>
-            </div>
+<div class="subcategory trigo">TRIGO</div>
+<div class="product-grid">
+<div class="product-card"><img src="producto.png"><div class="product-name">MULATA</div><div class="price">$22.000</div></div>
+<div class="product-card"><img src="producto.png"><div class="product-name">PERLA NEGRA</div><div class="price">$22.000</div></div>
+<div class="product-card"><img src="producto.png"><div class="product-name">DRACARYS</div><div class="price">$22.000</div></div>
+<div class="product-card"><img src="producto.png"><div class="product-name">FUEGO VALYRIO</div><div class="price">$22.000</div></div>
+</div>
 
-            <div class="product-card">
-                <img src="producto.png">
-                <div class="product-name">PARA EL CALOR</div>
-                <div class="product-desc">Whisky, licor de menta, naranja</div>
-                <div class="price">$20.000</div>
-            </div>
+<div class="section-title">Clásicos & Espuma</div>
 
-            <div class="product-card">
-                <img src="producto.png">
-                <div class="product-name">ALOHA!!!</div>
-                <div class="product-desc">Ron blanco doble, piña, coco, soda</div>
-                <div class="price">$20.000</div>
-            </div>
+<div class="subcategory">NACIONALES</div>
+<div class="product-grid">
+<div class="product-card"><div class="product-name">3 Cordilleras Rosada</div><div class="price">$3.500</div></div>
+<div class="product-card"><div class="product-name">Águila</div><div class="price">$4.000</div></div>
+<div class="product-card"><div class="product-name">Águila Light</div><div class="price">$4.000</div></div>
+<div class="product-card"><div class="product-name">Club Colombia Dorada</div><div class="price">$4.500</div></div>
+<div class="product-card"><div class="product-name">Club Colombia Roja</div><div class="price">$4.500</div></div>
+<div class="product-card"><div class="product-name">Club Colombia Trigo</div><div class="price">$4.500</div></div>
+<div class="product-card"><div class="product-name">Costeña</div><div class="price">$4.000</div></div>
+<div class="product-card"><div class="product-name">Póker</div><div class="price">$4.000</div></div>
+</div>
 
-            <div class="product-card">
-                <img src="producto.png">
-                <div class="product-name">MÉXICO AZUL</div>
-                <div class="product-desc">Tequila doble, curaçao azul, limón, michelada con sal</div>
-                <div class="price">$21.000</div>
-            </div>
+<div class="subcategory">EXTRANJERAS</div>
+<div class="product-grid">
+<div class="product-card"><div class="product-name">Budweiser</div><div class="price">$4.500</div></div>
+<div class="product-card"><div class="product-name">Corona</div><div class="price">$8.000</div></div>
+<div class="product-card"><div class="product-name">Coronita</div><div class="price">$4.500</div></div>
+<div class="product-card"><div class="product-name">Stella Artois</div><div class="price">$7.000</div></div>
+</div>
 
-        </div>
+<div class="section-title">Firma de la Casa</div>
+<div class="product-grid">
+<div class="product-card"><div class="product-name">Corona Día</div><div class="price">$18.000</div></div>
+<div class="product-card"><div class="product-name">Corona Tarde</div><div class="price">$18.000</div></div>
+<div class="product-card"><div class="product-name">Corona Noche</div><div class="price">$18.000</div></div>
+<div class="product-card"><div class="product-name">Entropía</div><div class="price">$18.000</div></div>
+<div class="product-card"><div class="product-name">Explosión Solar</div><div class="price">$18.000</div></div>
+<div class="product-card"><div class="product-name">Fusión Naranja</div><div class="price">$18.000</div></div>
+<div class="product-card"><div class="product-name">Gravedad Rosa</div><div class="price">$18.000</div></div>
+<div class="product-card"><div class="product-name">El Profe</div><div class="price">$18.000</div></div>
+<div class="product-card"><div class="product-name">Soda Especial</div><div class="price">$10.000</div></div>
+</div>
 
-        <div class="subcategory">ROJA</div>
-        <div class="product-grid">
+<div class="section-title">Sin Alcohol, Con Intención</div>
+<div class="product-grid">
+<div class="product-card"><div class="product-name">Agua</div><div class="price">$4.000</div></div>
+<div class="product-card"><div class="product-name">Coca-Cola</div><div class="price">$4.500</div></div>
+<div class="product-card"><div class="product-name">Electrolit</div><div class="price">$12.000</div></div>
+<div class="product-card"><div class="product-name">Ginger Ale</div><div class="price">$4.000</div></div>
+<div class="product-card"><div class="product-name">Soda</div><div class="price">$4.000</div></div>
+</div>
 
-            <div class="product-card">
-                <img src="producto.png">
-                <div class="product-name">PODEROSA</div>
-                <div class="product-desc">Whisky, amaretto, electrolit, soda</div>
-                <div class="price">$20.000</div>
-            </div>
-
-            <div class="product-card">
-                <img src="producto.png">
-                <div class="product-name">TROPICAL</div>
-                <div class="product-desc">Vodka, amaretto, naranja, curaçao azul</div>
-                <div class="price">$20.000</div>
-            </div>
-
-            <div class="product-card">
-                <img src="producto.png">
-                <div class="product-name">GOMELA</div>
-                <div class="product-desc">Ron añejo y blanco, piña, Smirnoff, limón</div>
-                <div class="price">$21.000</div>
-            </div>
-
-            <div class="product-card">
-                <img src="producto.png">
-                <div class="product-name">¡VIVA EL DIVO!</div>
-                <div class="product-desc">Tequila doble, limón, michelada tajín</div>
-                <div class="price">$21.000</div>
-            </div>
-
-        </div>
-
-        <div class="subcategory">TRIGO</div>
-        <div class="product-grid">
-
-            <div class="product-card">
-                <img src="producto.png">
-                <div class="product-name">MULATA</div>
-                <div class="product-desc">Ron blanco, tequila, triplesec, soda, limón</div>
-                <div class="price">$22.000</div>
-            </div>
-
-            <div class="product-card">
-                <img src="producto.png">
-                <div class="product-name">PERLA NEGRA</div>
-                <div class="product-desc">Jägermeister, licor menta, electrolit</div>
-                <div class="price">$22.000</div>
-            </div>
-
-            <div class="product-card">
-                <img src="producto.png">
-                <div class="product-name">DRACARYS</div>
-                <div class="product-desc">Ginebra, Gato Negro Cabernet</div>
-                <div class="price">$22.000</div>
-            </div>
-
-            <div class="product-card">
-                <img src="producto.png">
-                <div class="product-name">FUEGO VALYRIO</div>
-                <div class="product-desc">Ginebra, Prosecco, licor de menta</div>
-                <div class="price">$22.000</div>
-            </div>
-
-        </div>
-
-    </div>
-
+</div>
 </section>
 
 </body>
