@@ -68,10 +68,19 @@ font-size:0.9em;
 
 .menu-nav{
 display:flex;
-overflow-x:auto;
 gap:12px;
 padding:10px 0 20px 0;
 scroll-snap-type:x mandatory;
+justify-content:center;
+overflow-x:auto;
+}
+
+/* En pantallas grandes centramos completamente */
+@media (min-width:768px){
+.menu-nav{
+overflow-x:visible;
+justify-content:center;
+}
 }
 
 .menu-nav::-webkit-scrollbar{
