@@ -30,7 +30,7 @@ background:rgba(0,0,0,0.75);
 z-index:-1;
 }
 
-/* HEADER */
+/* HEADER FIJO */
 
 .header{
 position:fixed;
@@ -72,6 +72,7 @@ transition:all 0.3s ease;
 font-size:1.1em;
 margin-bottom:8px;
 }
+
 /* NAV */
 
 .menu-nav{
@@ -103,21 +104,42 @@ background:white;
 color:#111;
 }
 
+/* ESPACIADOR DINÁMICO */
+.spacer{
+height:180px;
+}
+
 /* CONTENIDO */
 
 .container{
 max-width:1100px;
-margin:200px auto 80px auto;
+margin:0 auto 80px auto;
 padding:0 20px;
 }
 
 .category{
 margin:60px 0 30px 0;
-font-size:1.3em;
+font-size:1.4em;
 letter-spacing:3px;
 text-align:center;
-color:#e5e5e5;
+font-weight:bold;
 }
+
+/* COLORES CATEGORÍAS */
+
+.dorada{
+color:#d4af37;
+}
+
+.roja{
+color:#7b1e3a;
+}
+
+.trigo{
+color:#2e8b57;
+}
+
+/* PRODUCTOS */
 
 .product-grid{
 display:grid;
@@ -138,6 +160,20 @@ transition:0.3s;
 
 .product-card img:hover{
 transform:scale(1.05);
+}
+
+/* NEÓN POR CATEGORÍA */
+
+.neon-dorada{
+box-shadow:0 0 10px #d4af37, 0 0 20px #d4af37;
+}
+
+.neon-roja{
+box-shadow:0 0 10px #7b1e3a, 0 0 20px #7b1e3a;
+}
+
+.neon-trigo{
+box-shadow:0 0 10px #2e8b57, 0 0 20px #2e8b57;
 }
 
 .product-name{
@@ -173,10 +209,10 @@ color:white;
 
 @media (max-width:480px){
 .logo{
-width:230px;
+width:220px;
 }
 .title{
-font-size:1.3em;
+font-size:1.2em;
 }
 }
 
@@ -186,9 +222,7 @@ font-size:1.3em;
 <body>
 
 <div class="header">
-
 <img src="LogoPrincipal.png" class="logo">
-
 <div class="title">Mezcladitas</div>
 
 <div class="menu-nav">
@@ -197,39 +231,39 @@ font-size:1.3em;
 <a href="cervezas.html">Cervezas</a>
 <a href="sinalcohol.html">Sin Alcohol</a>
 </div>
-
 </div>
+
+<div class="spacer"></div>
 
 <div class="container">
 
 <!-- DORADA -->
-<div class="category">DORADA</div>
-
+<div class="category dorada">DORADA</div>
 <div class="product-grid">
 
 <div class="product-card">
-<img src="producto.png">
+<img src="producto.png" class="neon-dorada">
 <div class="product-name">ICEBEER</div>
 <div class="ingredients">Vodka, Naranja, Smirnoff Ice</div>
 <div class="price">$20.000</div>
 </div>
 
 <div class="product-card">
-<img src="producto.png">
+<img src="producto.png" class="neon-dorada">
 <div class="product-name">PARA EL CALOR</div>
 <div class="ingredients">Whisky, licor de menta, naranja</div>
 <div class="price">$20.000</div>
 </div>
 
 <div class="product-card">
-<img src="producto.png">
+<img src="producto.png" class="neon-dorada">
 <div class="product-name">ALOHA!!!</div>
 <div class="ingredients">Ron Blanco doble, piña, coco, soda</div>
 <div class="price">$20.000</div>
 </div>
 
 <div class="product-card">
-<img src="producto.png">
+<img src="producto.png" class="neon-dorada">
 <div class="product-name">MÉXICO AZUL</div>
 <div class="ingredients">Tequila doble, curaçao azul, limón, michelada con sal</div>
 <div class="price">$21.000</div>
@@ -238,33 +272,32 @@ font-size:1.3em;
 </div>
 
 <!-- ROJA -->
-<div class="category">ROJA</div>
-
+<div class="category roja">ROJA</div>
 <div class="product-grid">
 
 <div class="product-card">
-<img src="producto.png">
+<img src="producto.png" class="neon-roja">
 <div class="product-name">PODEROSA</div>
 <div class="ingredients">Whisky, amaretto, electrolit, soda</div>
 <div class="price">$20.000</div>
 </div>
 
 <div class="product-card">
-<img src="producto.png">
+<img src="producto.png" class="neon-roja">
 <div class="product-name">TROPICAL</div>
 <div class="ingredients">Vodka, amaretto, naranja, curaçao azul</div>
 <div class="price">$20.000</div>
 </div>
 
 <div class="product-card">
-<img src="producto.png">
+<img src="producto.png" class="neon-roja">
 <div class="product-name">GOMELA</div>
 <div class="ingredients">Ron Añejo y Blanco, piña, Smirnoff, limón</div>
 <div class="price">$21.000</div>
 </div>
 
 <div class="product-card">
-<img src="producto.png">
+<img src="producto.png" class="neon-roja">
 <div class="product-name">¡VIVA EL DIVO!</div>
 <div class="ingredients">Tequila doble, limón, michelada tajín</div>
 <div class="price">$21.000</div>
@@ -273,33 +306,32 @@ font-size:1.3em;
 </div>
 
 <!-- TRIGO -->
-<div class="category">TRIGO</div>
-
+<div class="category trigo">TRIGO</div>
 <div class="product-grid">
 
 <div class="product-card">
-<img src="producto.png">
+<img src="producto.png" class="neon-trigo">
 <div class="product-name">MULATA</div>
 <div class="ingredients">Ron Blanco, Tequila, triplesec, soda, limón</div>
 <div class="price">$22.000</div>
 </div>
 
 <div class="product-card">
-<img src="producto.png">
+<img src="producto.png" class="neon-trigo">
 <div class="product-name">PERLA NEGRA</div>
 <div class="ingredients">Jägermeister, licor menta, electrolit</div>
 <div class="price">$22.000</div>
 </div>
 
 <div class="product-card">
-<img src="producto.png">
+<img src="producto.png" class="neon-trigo">
 <div class="product-name">DRACARYS</div>
 <div class="ingredients">Ginebra, Gato Negro Cabernet</div>
 <div class="price">$22.000</div>
 </div>
 
 <div class="product-card">
-<img src="producto.png">
+<img src="producto.png" class="neon-trigo">
 <div class="product-name">FUEGO VALYRIO</div>
 <div class="ingredients">Ginebra, Prosecco, Licor de Menta</div>
 <div class="price">$22.000</div>
@@ -311,16 +343,25 @@ font-size:1.3em;
 
 </div>
 
-  <script>
+<script>
+const header = document.querySelector(".header");
+const spacer = document.querySelector(".spacer");
+
+function adjustSpacer(){
+spacer.style.height = header.offsetHeight + "px";
+}
+
+window.addEventListener("load", adjustSpacer);
+window.addEventListener("resize", adjustSpacer);
+
 window.addEventListener("scroll", function(){
-    const header = document.querySelector(".header");
-    if(window.scrollY > 80){
-        header.classList.add("shrink");
-    } else {
-        header.classList.remove("shrink");
-    }
+if(window.scrollY > 80){
+header.classList.add("shrink");
+} else {
+header.classList.remove("shrink");
+}
 });
 </script>
-  
+
 </body>
 </html>
