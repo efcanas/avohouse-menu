@@ -11,6 +11,7 @@
 margin:0;
 padding:0;
 box-sizing:border-box;
+scroll-behavior:smooth;
 }
 
 body{
@@ -19,7 +20,6 @@ color:white;
 background:url('Fondo.png') center/cover fixed no-repeat;
 }
 
-/* Capa oscura elegante */
 body::before{
 content:"";
 position:fixed;
@@ -31,108 +31,106 @@ background:rgba(0,0,0,0.75);
 z-index:-1;
 }
 
-/* CONTENIDO PRINCIPAL */
+/* ===== PORTADA ===== */
 
-.main{
+.hero{
+height:100vh;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
 text-align:center;
-padding:60px 20px 40px 20px;
+padding:20px;
 }
 
-.logo{
-width:340px;
+.hero img{
+width:320px;
 max-width:90%;
+margin-bottom:20px;
+}
+
+.hero h1{
+font-size:2em;
+letter-spacing:4px;
 margin-bottom:15px;
 }
 
-.brand{
+.hero p{
+font-size:1.1em;
+letter-spacing:2px;
+color:#ccc;
+margin-bottom:40px;
+}
+
+.hero button{
+padding:14px 30px;
+border:1px solid white;
+background:transparent;
+color:white;
+font-size:0.9em;
+letter-spacing:2px;
+cursor:pointer;
+transition:0.3s;
+border-radius:30px;
+}
+
+.hero button:hover{
+background:white;
+color:black;
+}
+
+/* ===== MENÚ ===== */
+
+.menu-section{
+padding:100px 20px 80px 20px;
+text-align:center;
+}
+
+.menu-title{
 font-size:1.6em;
 letter-spacing:4px;
-margin-bottom:8px;
+margin-bottom:40px;
 }
 
-.tagline{
-font-style:italic;
-color:#ccc;
-margin-bottom:25px;
-font-size:0.95em;
-}
-
-.info{
-color:#bbb;
-line-height:1.6;
-margin-bottom:30px;
-font-size:0.9em;
-}
-
-/* BOTONES DESLIZABLES */
-
-.menu-nav{
+.menu-buttons{
 display:flex;
-gap:12px;
-padding:10px 0 20px 0;
-scroll-snap-type:x mandatory;
+flex-wrap:wrap;
 justify-content:center;
-overflow-x:auto;
+gap:20px;
 }
 
-/* En pantallas grandes centramos completamente */
-@media (min-width:768px){
-.menu-nav{
-overflow-x:visible;
-justify-content:center;
-}
-}
-
-.menu-nav::-webkit-scrollbar{
-display:none;
-}
-
-.menu-nav a{
-flex:0 0 auto;
-scroll-snap-align:start;
+.menu-buttons a{
 text-decoration:none;
 color:white;
-padding:12px 20px;
-border:1px solid rgba(255,255,255,0.25);
+border:1px solid rgba(255,255,255,0.3);
+padding:15px 25px;
 border-radius:30px;
-font-size:0.85em;
-white-space:nowrap;
+font-size:0.9em;
+letter-spacing:2px;
 transition:0.3s;
 }
 
-.menu-nav a:hover{
+.menu-buttons a:hover{
 background:white;
-color:#111;
+color:black;
 }
 
-/* REDES */
+/* RESPONSIVE */
 
-.social{
-margin-top:25px;
+@media(max-width:480px){
+
+.hero img{
+width:260px;
 }
 
-.social img{
-width:24px;
-margin:0 10px;
-filter:invert(1);
-opacity:0.85;
-transition:0.2s;
+.hero h1{
+font-size:1.6em;
 }
 
-.social img:hover{
-opacity:1;
-transform:scale(1.15);
+.hero p{
+font-size:1em;
 }
 
-/* RESPONSIVE AJUSTES */
-
-@media (max-width:480px){
-.logo{
-width:280px;
-}
-.brand{
-font-size:1.4em;
-}
 }
 
 </style>
@@ -140,46 +138,29 @@ font-size:1.4em;
 
 <body>
 
-<div class="main">
+<!-- PORTADA -->
 
-<img src="LogoPrincipal.png" class="logo">
+<section class="hero">
+<img src="LogoPrincipal.png">
+<h1>AvoHouse Pub</h1>
+<p>El plan antes del plan.</p>
+<button onclick="document.getElementById('menu').scrollIntoView()">Ver Menú ↓</button>
+</section>
 
-<div class="brand">AvoHouse Pub</div>
+<!-- MENÚ -->
 
-<div class="tagline">
-Donde la música no compite con la conversación.
-</div>
+<section id="menu" class="menu-section">
 
-<div class="info">
-Calle 27 No. 26-99<br>
-San José del Guaviare<br><br>
-Dom–Jue 16:00 – 00:00<br>
-Vie–Sáb hasta 01:00
-</div>
+<div class="menu-title">MENÚ</div>
 
-<div class="menu-nav">
+<div class="menu-buttons">
 <a href="mezcladitas.html">Mezcladitas</a>
 <a href="firma.html">Firma de la Casa</a>
 <a href="cervezas.html">Cervezas</a>
 <a href="sinalcohol.html">Sin Alcohol</a>
 </div>
 
-<div class="social">
-<a href="https://wa.me/573026475174" target="_blank">
-<img src="https://cdn-icons-png.flaticon.com/512/733/733585.png">
-</a>
-<a href="https://www.instagram.com/avohouseguaviare" target="_blank">
-<img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png">
-</a>
-<a href="https://www.facebook.com/people/Avohouse-Guaviare/" target="_blank">
-<img src="https://cdn-icons-png.flaticon.com/512/733/733547.png">
-</a>
-<a href="https://www.google.com/maps/place/AvoHouse" target="_blank">
-<img src="https://cdn-icons-png.flaticon.com/512/684/684908.png">
-</a>
-</div>
-
-</div>
+</section>
 
 </body>
 </html>
