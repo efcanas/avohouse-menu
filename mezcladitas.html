@@ -105,6 +105,7 @@ color:#111;
 }
 
 /* ESPACIADOR DINÁMICO */
+
 .spacer{
 height:180px;
 }
@@ -125,14 +126,14 @@ text-align:center;
 font-weight:bold;
 }
 
-/* COLORES CATEGORÍAS */
+/* COLORES */
 
 .dorada{
 color:#d4af37;
 }
 
 .roja{
-color:#e10600; /* rojo más encendido */
+color:#e10600;
 }
 
 .trigo{
@@ -151,13 +152,19 @@ gap:40px;
 text-align:center;
 }
 
-.product-card img:hover{
-transform:scale(1.12);
-box-shadow:0 0 25px rgba(255,255,255,0.2);
+/* IMÁGENES BASE (SIN ESCALA) */
+
+.product-card img{
+width:100%;
+border-radius:12px;
+margin-bottom:15px;
+transition:transform 0.3s ease, box-shadow 0.3s ease;
 }
 
+/* ZOOM SOLO EN HOVER */
+
 .product-card img:hover{
-transform:scale(1.05);
+transform:scale(1.12);
 }
 
 /* NEÓN POR CATEGORÍA */
