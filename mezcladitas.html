@@ -11,7 +11,6 @@
 margin:0;
 padding:0;
 box-sizing:border-box;
-scroll-behavior:smooth;
 }
 
 body{
@@ -31,95 +30,209 @@ background:rgba(0,0,0,0.75);
 z-index:-1;
 }
 
-/* ===== HEADER FIJO ===== */
+/* HEADER FIJO */
 
-.top-nav{
+.header{
 position:fixed;
 top:0;
 left:0;
 width:100%;
-background:rgba(0,0,0,0.9);
-padding:15px 0;
-text-align:center;
 z-index:1000;
+text-align:center;
+padding:25px 20px 15px 20px;
+background:rgba(0,0,0,0.85);
+backdrop-filter:blur(8px);
+border-bottom:1px solid rgba(255,255,255,0.08);
+transition:all 0.3s ease;
 }
 
-.top-nav a{
+.header.shrink{
+padding:10px 20px 5px 20px;
+}
+
+.logo{
+width:260px;
+max-width:90%;
+margin-bottom:8px;
+transition:all 0.3s ease;
+}
+
+.header.shrink .logo{
+width:170px;
+}
+
+.title{
+font-size:1.5em;
+letter-spacing:3px;
+margin-bottom:15px;
+transition:all 0.3s ease;
+}
+
+.header.shrink .title{
+font-size:1.1em;
+margin-bottom:8px;
+}
+
+/* NAV */
+
+.menu-nav{
+display:flex;
+overflow-x:auto;
+gap:12px;
+padding:10px 20px 20px 20px;
+justify-content:center;
+}
+
+.menu-nav::-webkit-scrollbar{
+display:none;
+}
+
+.menu-nav a{
+flex:0 0 auto;
 text-decoration:none;
 color:white;
-border:1px solid rgba(255,255,255,0.3);
-padding:10px 20px;
+padding:10px 18px;
+border:1px solid rgba(255,255,255,0.25);
 border-radius:30px;
 font-size:0.85em;
-letter-spacing:2px;
+white-space:nowrap;
 transition:0.3s;
 }
 
-.top-nav a:hover{
+.menu-nav a:hover{
 background:white;
-color:black;
+color:#111;
 }
 
-/* ===== CONTENIDO ===== */
+/* CATEGORÍA FIJA */
+
+.fixed-category{
+position:fixed;
+top:140px;
+left:0;
+width:100%;
+text-align:center;
+font-size:1.1em;
+letter-spacing:3px;
+font-weight:bold;
+z-index:900;
+pointer-events:none;
+transition:all 0.3s ease;
+}
+
+.header.shrink + .fixed-category{
+top:95px;
+font-size:0.95em;
+}
+
+/* ESPACIADOR DINÁMICO */
+
+.spacer{
+height:220px;
+}
+
+/* CONTENIDO */
 
 .container{
-max-width:900px;
-margin:120px auto 80px auto;
-padding:20px;
+max-width:1100px;
+margin:0 auto 80px auto;
+padding:0 20px;
 }
 
-.category-title{
-font-size:1.8em;
-letter-spacing:4px;
-margin-bottom:40px;
-text-align:center;
-}
-
-.subcategory{
-margin-top:40px;
-font-size:1.2em;
+.category{
+margin:60px 0 30px 0;
+font-size:1.4em;
 letter-spacing:3px;
-border-bottom:1px solid rgba(255,255,255,0.2);
-padding-bottom:10px;
-margin-bottom:25px;
-}
-
-.product{
-margin-bottom:40px;
-}
-
-.product img{
-width:100%;
-max-width:400px;
-border-radius:10px;
-margin-bottom:15px;
-cursor:pointer;
-transition:0.3s;
-}
-
-.product img:hover{
-transform:scale(1.05);
-}
-
-.product h3{
-font-size:1.1em;
-margin-bottom:5px;
-}
-
-.price{
-float:right;
+text-align:center;
 font-weight:bold;
 }
 
-.ingredients{
-font-size:0.9em;
-color:#ccc;
-line-height:1.5;
+/* COLORES */
+
+.dorada{
+color:#d4af37;
 }
 
-@media(max-width:480px){
-.product img{
-max-width:100%;
+.roja{
+color:#e10600;
+}
+
+.trigo{
+color:#2e8b57;
+}
+
+/* PRODUCTOS */
+
+.product-grid{
+display:grid;
+grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+gap:40px;
+}
+
+.product-card{
+text-align:center;
+}
+
+.product-card img{
+width:100%;
+border-radius:12px;
+margin-bottom:15px;
+transition:transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.product-card img:hover{
+transform:scale(1.12);
+}
+
+.neon-dorada{
+box-shadow:0 0 10px #d4af37, 0 0 20px #d4af37;
+}
+
+.neon-roja{
+box-shadow:0 0 12px #e10600, 0 0 25px #e10600;
+}
+
+.neon-trigo{
+box-shadow:0 0 10px #2e8b57, 0 0 20px #2e8b57;
+}
+
+.product-name{
+font-size:1.05em;
+margin-bottom:6px;
+letter-spacing:1px;
+}
+
+.ingredients{
+font-size:0.85em;
+color:#bbb;
+margin-bottom:8px;
+line-height:1.4;
+}
+
+.price{
+font-size:0.95em;
+color:#e0e0e0;
+}
+
+.back{
+display:block;
+text-align:center;
+margin-top:60px;
+color:#ccc;
+text-decoration:none;
+font-size:0.9em;
+}
+
+.back:hover{
+color:white;
+}
+
+@media (max-width:480px){
+.logo{
+width:220px;
+}
+.title{
+font-size:1.2em;
 }
 }
 
@@ -128,53 +241,165 @@ max-width:100%;
 
 <body>
 
-<!-- BOTÓN FIJO DE CATEGORÍA -->
+<div class="header">
+<img src="LogoPrincipal.png" class="logo">
+<div class="title">Mezcladitas</div>
 
-<div class="top-nav">
-<a href="index.html">← Volver al Menú</a>
+<div class="menu-nav">
+<a href="index.html">Inicio</a>
+<a href="firma.html">Firma de la Casa</a>
+<a href="cervezas.html">Cervezas</a>
+<a href="sinalcohol.html">Sin Alcohol</a>
 </div>
+</div>
+
+<div class="fixed-category" id="fixedCategory">DORADA</div>
+
+<div class="spacer"></div>
 
 <div class="container">
 
-<div class="category-title">MEZCLADITAS</div>
-
 <!-- DORADA -->
+<div class="category dorada">DORADA</div>
+<div class="product-grid">
+<div class="product-card">
+<img src="producto.png" class="neon-dorada">
+<div class="product-name">ICEBEER</div>
+<div class="ingredients">Vodka, Naranja, Smirnoff Ice</div>
+<div class="price">$20.000</div>
+</div>
 
-<div class="subcategory">DORADA</div>
+<div class="product-card">
+<img src="producto.png" class="neon-dorada">
+<div class="product-name">PARA EL CALOR</div>
+<div class="ingredients">Whisky, licor de menta, naranja</div>
+<div class="price">$20.000</div>
+</div>
 
-<div class="product">
-<img src="producto.png">
-<h3>Mezcladita Dorada <span class="price">$18.000</span></h3>
-<div class="ingredients">
-Cerveza dorada, limón, sal especial y mezcla de la casa.
+<div class="product-card">
+<img src="producto.png" class="neon-dorada">
+<div class="product-name">ALOHA!!!</div>
+<div class="ingredients">Ron Blanco doble, piña, coco, soda</div>
+<div class="price">$20.000</div>
+</div>
+
+<div class="product-card">
+<img src="producto.png" class="neon-dorada">
+<div class="product-name">MÉXICO AZUL</div>
+<div class="ingredients">Tequila doble, curaçao azul, limón, michelada con sal</div>
+<div class="price">$21.000</div>
 </div>
 </div>
 
 <!-- ROJA -->
+<div class="category roja">ROJA</div>
+<div class="product-grid">
+<div class="product-card">
+<img src="producto.png" class="neon-roja">
+<div class="product-name">PODEROSA</div>
+<div class="ingredients">Whisky, amaretto, electrolit, soda</div>
+<div class="price">$20.000</div>
+</div>
 
-<div class="subcategory">ROJA</div>
+<div class="product-card">
+<img src="producto.png" class="neon-roja">
+<div class="product-name">TROPICAL</div>
+<div class="ingredients">Vodka, amaretto, naranja, curaçao azul</div>
+<div class="price">$20.000</div>
+</div>
 
-<div class="product">
-<img src="producto.png">
-<h3>Mezcladita Roja <span class="price">$18.000</span></h3>
-<div class="ingredients">
-Cerveza roja, frutos rojos, limón y toque dulce artesanal.
+<div class="product-card">
+<img src="producto.png" class="neon-roja">
+<div class="product-name">GOMELA</div>
+<div class="ingredients">Ron Añejo y Blanco, piña, Smirnoff, limón</div>
+<div class="price">$21.000</div>
+</div>
+
+<div class="product-card">
+<img src="producto.png" class="neon-roja">
+<div class="product-name">¡VIVA EL DIVO!</div>
+<div class="ingredients">Tequila doble, limón, michelada tajín</div>
+<div class="price">$21.000</div>
 </div>
 </div>
 
 <!-- TRIGO -->
+<div class="category trigo">TRIGO</div>
+<div class="product-grid">
+<div class="product-card">
+<img src="producto.png" class="neon-trigo">
+<div class="product-name">MULATA</div>
+<div class="ingredients">Ron Blanco, Tequila, triplesec, soda, limón</div>
+<div class="price">$22.000</div>
+</div>
 
-<div class="subcategory">TRIGO</div>
+<div class="product-card">
+<img src="producto.png" class="neon-trigo">
+<div class="product-name">PERLA NEGRA</div>
+<div class="ingredients">Jägermeister, licor menta, electrolit</div>
+<div class="price">$22.000</div>
+</div>
 
-<div class="product">
-<img src="producto.png">
-<h3>Mezcladita Trigo <span class="price">$18.000</span></h3>
-<div class="ingredients">
-Cerveza de trigo, cítricos frescos y especias suaves.
+<div class="product-card">
+<img src="producto.png" class="neon-trigo">
+<div class="product-name">DRACARYS</div>
+<div class="ingredients">Ginebra, Gato Negro Cabernet</div>
+<div class="price">$22.000</div>
+</div>
+
+<div class="product-card">
+<img src="producto.png" class="neon-trigo">
+<div class="product-name">FUEGO VALYRIO</div>
+<div class="ingredients">Ginebra, Prosecco, Licor de Menta</div>
+<div class="price">$22.000</div>
 </div>
 </div>
 
+<a href="index.html" class="back">← Volver al inicio</a>
+
 </div>
+
+<script>
+
+const header = document.querySelector(".header");
+const spacer = document.querySelector(".spacer");
+const categories = document.querySelectorAll(".category");
+const fixedCategory = document.getElementById("fixedCategory");
+
+function adjustSpacer(){
+spacer.style.height = header.offsetHeight + 60 + "px";
+}
+
+function updateCategory(){
+let current = "";
+categories.forEach(cat => {
+const rect = cat.getBoundingClientRect();
+if(rect.top <= 160){
+current = cat.textContent;
+}
+});
+if(current !== ""){
+fixedCategory.textContent = current;
+}
+}
+
+window.addEventListener("load", () => {
+adjustSpacer();
+updateCategory();
+});
+
+window.addEventListener("resize", adjustSpacer);
+
+window.addEventListener("scroll", function(){
+if(window.scrollY > 80){
+header.classList.add("shrink");
+} else {
+header.classList.remove("shrink");
+}
+updateCategory();
+});
+
+</script>
 
 </body>
 </html>
