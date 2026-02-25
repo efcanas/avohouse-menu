@@ -6,13 +6,7 @@
 <title>AvoHouse Pub</title>
 
 <style>
-
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-scroll-behavior:smooth;
-}
+*{margin:0;padding:0;box-sizing:border-box;}
 
 body{
 font-family:'Helvetica Neue', Arial, sans-serif;
@@ -23,182 +17,87 @@ background:url('Fondo.png') center/cover fixed no-repeat;
 body::before{
 content:"";
 position:fixed;
-top:0;
-left:0;
-width:100%;
-height:100%;
+top:0;left:0;
+width:100%;height:100%;
 background:rgba(0,0,0,0.75);
 z-index:-1;
 }
 
-/* ===== PORTADA ===== */
-
-.hero{
-height:100vh;
-display:flex;
-flex-direction:column;
-justify-content:center;
-align-items:center;
+.main{
 text-align:center;
-padding:20px;
+padding:80px 20px 40px;
 }
 
-.hero img{
-width:320px;
-max-width:90%;
-margin-bottom:20px;
-}
+.logo{width:340px;max-width:90%;margin-bottom:15px;}
 
-.hero h1{
-font-size:2em;
-letter-spacing:4px;
-margin-bottom:15px;
-}
-
-.hero p{
-font-size:1.1em;
-letter-spacing:2px;
-color:#ccc;
-margin-bottom:30px;
-}
-
-.hero button{
-padding:14px 30px;
-border:1px solid white;
-background:transparent;
-color:white;
-font-size:0.9em;
-letter-spacing:2px;
-cursor:pointer;
-transition:0.3s;
-border-radius:30px;
-margin-bottom:30px;
-}
-
-.hero button:hover{
-background:white;
-color:black;
-}
-
-/* ===== REDES ===== */
-
-.social-icons{
-display:flex;
-gap:25px;
-justify-content:center;
-}
-
-.social-icons a img{
-width:32px;
-transition:0.3s;
-}
-
-.social-icons a img:hover{
-transform:scale(1.2);
-}
-
-/* ===== MENÚ ===== */
-
-.menu-section{
-padding:100px 20px 80px 20px;
-text-align:center;
-}
-
-.menu-title{
+.brand{
 font-size:1.6em;
 letter-spacing:4px;
-margin-bottom:40px;
+margin-bottom:8px;
 }
 
-.menu-buttons{
+.tagline{
+font-style:italic;
+color:#ccc;
+margin-bottom:25px;
+}
+
+.info{
+color:#bbb;
+line-height:1.6;
+margin-bottom:30px;
+font-size:0.9em;
+}
+
+.menu-nav{
 display:flex;
-flex-wrap:wrap;
 justify-content:center;
-gap:20px;
+gap:15px;
+flex-wrap:wrap;
 }
 
-.menu-buttons a{
+.menu-nav a{
 text-decoration:none;
 color:white;
-border:1px solid rgba(255,255,255,0.3);
-padding:15px 25px;
+padding:12px 22px;
+border:1px solid rgba(255,255,255,0.25);
 border-radius:30px;
 font-size:0.9em;
-letter-spacing:2px;
-transition:0.3s;
+transition:.3s;
 }
 
-.menu-buttons a:hover{
+.menu-nav a:hover{
 background:white;
-color:black;
+color:#111;
 }
-
-/* RESPONSIVE */
-
-@media(max-width:480px){
-
-.hero img{
-width:260px;
-}
-
-.hero h1{
-font-size:1.6em;
-}
-
-.hero p{
-font-size:1em;
-}
-
-}
-
 </style>
 </head>
 
 <body>
 
-<!-- PORTADA -->
+<div class="main">
 
-<section class="hero">
-<img src="LogoPrincipal.png">
-<h1>AvoHouse Pub</h1>
-<p>Donde la música acompaña, no interrumpe.</p>
+<img src="LogoPrincipal.png" class="logo">
 
-<button onclick="document.getElementById('menu').scrollIntoView()">Ver Menú ↓</button>
+<div class="brand">AvoHouse Pub</div>
 
-<div class="social-icons">
-<a href="https://wa.me/573026475174" target="_blank">
-<img src="https://cdn-icons-png.flaticon.com/512/733/733585.png">
-</a>
+<div class="tagline">Donde la música no compite con la conversación.</div>
 
-<a href="https://www.instagram.com/avohouseguaviare" target="_blank">
-<img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png">
-</a>
-
-<a href="https://www.facebook.com/people/Avohouse-Guaviare/" target="_blank">
-<img src="https://cdn-icons-png.flaticon.com/512/733/733547.png">
-</a>
-
-<a href="https://www.google.com/maps/place/AvoHouse/@2.5596824,-72.6297883" target="_blank">
-<img src="https://cdn-icons-png.flaticon.com/512/684/684908.png">
-</a>
+<div class="info">
+Calle 27 No. 26-99<br>
+San José del Guaviare<br><br>
+Dom–Jue 16:00 – 00:00<br>
+Vie–Sáb hasta 01:00
 </div>
 
-</section>
-
-<!-- MENÚ -->
-
-<section id="menu" class="menu-section">
-
-<div class="menu-title">MENÚ</div>
-
-<div class="menu-buttons">
+<div class="menu-nav">
 <a href="mezcladitas.html">Mezcladitas</a>
 <a href="firma.html">Firma de la Casa</a>
 <a href="cervezas.html">Cervezas</a>
 <a href="sinalcohol.html">Sin Alcohol</a>
 </div>
 
-</section>
+</div>
 
 </body>
 </html>
