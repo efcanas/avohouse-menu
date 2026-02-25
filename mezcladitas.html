@@ -105,10 +105,13 @@ background:white;
 color:#111;
 }
 
+/* BOTÓN ACTIVO SUTIL */
+
 .menu-nav a.active{
-background:white;
-color:#111;
+background:rgba(255,255,255,0.15);
+color:white;
 font-weight:600;
+border-color:rgba(255,255,255,0.4);
 }
 
 /* INDICADOR DE SECCIÓN */
@@ -145,7 +148,21 @@ margin:60px 0 30px 0;
 font-size:1.3em;
 letter-spacing:3px;
 text-align:center;
-color:#e5e5e5;
+font-weight:700;
+}
+
+/* COLORES POR CATEGORÍA */
+
+.category:nth-of-type(1){
+color:#d4af37;
+}
+
+.category:nth-of-type(2){
+color:#e10600;
+}
+
+.category:nth-of-type(3){
+color:#2e8b57;
 }
 
 .product-grid{
@@ -163,6 +180,23 @@ width:100%;
 border-radius:12px;
 margin-bottom:15px;
 transition:0.3s;
+}
+
+/* NEÓN POR BLOQUE */
+
+/* DORADA */
+.container > .product-grid:nth-of-type(1) img{
+box-shadow:0 0 10px #d4af37, 0 0 25px #d4af37;
+}
+
+/* ROJA */
+.container > .product-grid:nth-of-type(2) img{
+box-shadow:0 0 10px #e10600, 0 0 25px #e10600;
+}
+
+/* TRIGO */
+.container > .product-grid:nth-of-type(3) img{
+box-shadow:0 0 10px #2e8b57, 0 0 25px #2e8b57;
 }
 
 .product-card img:hover{
@@ -239,7 +273,6 @@ Mezcladitas
 <!-- DORADA -->
 <div class="category">DORADA</div>
 <div class="product-grid">
-
 <div class="product-card">
 <img src="producto.png">
 <div class="product-name">ICEBEER</div>
@@ -267,13 +300,11 @@ Mezcladitas
 <div class="ingredients">Tequila doble, curaçao azul, limón, michelada con sal</div>
 <div class="price">$21.000</div>
 </div>
-
 </div>
 
 <!-- ROJA -->
 <div class="category">ROJA</div>
 <div class="product-grid">
-
 <div class="product-card">
 <img src="producto.png">
 <div class="product-name">PODEROSA</div>
@@ -301,13 +332,11 @@ Mezcladitas
 <div class="ingredients">Tequila doble, limón, michelada tajín</div>
 <div class="price">$21.000</div>
 </div>
-
 </div>
 
 <!-- TRIGO -->
 <div class="category">TRIGO</div>
 <div class="product-grid">
-
 <div class="product-card">
 <img src="producto.png">
 <div class="product-name">MULATA</div>
@@ -335,7 +364,6 @@ Mezcladitas
 <div class="ingredients">Ginebra, Prosecco, licor de menta</div>
 <div class="price">$22.000</div>
 </div>
-
 </div>
 
 <a href="index.html" class="back">← Volver al inicio</a>
