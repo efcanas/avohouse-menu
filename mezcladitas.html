@@ -19,7 +19,6 @@ color:white;
 background:url('Fondo.png') center/cover fixed no-repeat;
 }
 
-/* Oscurecedor elegante */
 body::before{
 content:"";
 position:fixed;
@@ -80,7 +79,7 @@ margin-bottom:8px;
 display:flex;
 overflow-x:auto;
 gap:12px;
-padding:10px 0 10px 0;
+padding:10px 0;
 justify-content:center;
 }
 
@@ -105,8 +104,6 @@ background:white;
 color:#111;
 }
 
-/* BOTÓN ACTIVO SUTIL */
-
 .menu-nav a.active{
 background:rgba(255,255,255,0.15);
 color:white;
@@ -114,7 +111,7 @@ font-weight:600;
 border-color:rgba(255,255,255,0.4);
 }
 
-/* INDICADOR DE SECCIÓN */
+/* INDICADOR */
 
 .section-indicator{
 position:fixed;
@@ -151,19 +148,21 @@ text-align:center;
 font-weight:700;
 }
 
-/* COLORES POR CATEGORÍA */
+/* COLORES CORRECTOS */
 
-.category:nth-of-type(1){
+.dorada-title{
 color:#d4af37;
 }
 
-.category:nth-of-type(2){
+.roja-title{
 color:#e10600;
 }
 
-.category:nth-of-type(3){
+.trigo-title{
 color:#2e8b57;
 }
+
+/* GRID */
 
 .product-grid{
 display:grid;
@@ -182,20 +181,17 @@ margin-bottom:15px;
 transition:0.3s;
 }
 
-/* NEÓN POR BLOQUE */
+/* NEÓN CORRECTO */
 
-/* DORADA */
-.container > .product-grid:nth-of-type(1) img{
+.dorada-grid img{
 box-shadow:0 0 10px #d4af37, 0 0 25px #d4af37;
 }
 
-/* ROJA */
-.container > .product-grid:nth-of-type(2) img{
+.roja-grid img{
 box-shadow:0 0 10px #e10600, 0 0 25px #e10600;
 }
 
-/* TRIGO */
-.container > .product-grid:nth-of-type(3) img{
+.trigo-grid img{
 box-shadow:0 0 10px #2e8b57, 0 0 25px #2e8b57;
 }
 
@@ -271,99 +267,27 @@ Mezcladitas
 <div class="container">
 
 <!-- DORADA -->
-<div class="category">DORADA</div>
-<div class="product-grid">
-<div class="product-card">
-<img src="producto.png">
-<div class="product-name">ICEBEER</div>
-<div class="ingredients">Vodka, naranja, Smirnoff Ice</div>
-<div class="price">$20.000</div>
-</div>
+<div class="category dorada-title">DORADA</div>
+<div class="product-grid dorada-grid">
 
-<div class="product-card">
-<img src="producto.png">
-<div class="product-name">PARA EL CALOR</div>
-<div class="ingredients">Whisky, licor de menta, naranja</div>
-<div class="price">$20.000</div>
-</div>
+<!-- productos dorada -->
 
-<div class="product-card">
-<img src="producto.png">
-<div class="product-name">ALOHA!!!</div>
-<div class="ingredients">Ron blanco doble, piña, coco, soda</div>
-<div class="price">$20.000</div>
-</div>
-
-<div class="product-card">
-<img src="producto.png">
-<div class="product-name">MÉXICO AZUL</div>
-<div class="ingredients">Tequila doble, curaçao azul, limón, michelada con sal</div>
-<div class="price">$21.000</div>
-</div>
 </div>
 
 <!-- ROJA -->
-<div class="category">ROJA</div>
-<div class="product-grid">
-<div class="product-card">
-<img src="producto.png">
-<div class="product-name">PODEROSA</div>
-<div class="ingredients">Whisky, amaretto, electrolit, soda</div>
-<div class="price">$20.000</div>
-</div>
+<div class="category roja-title">ROJA</div>
+<div class="product-grid roja-grid">
 
-<div class="product-card">
-<img src="producto.png">
-<div class="product-name">TROPICAL</div>
-<div class="ingredients">Vodka, amaretto, naranja, curaçao azul</div>
-<div class="price">$20.000</div>
-</div>
+<!-- productos roja -->
 
-<div class="product-card">
-<img src="producto.png">
-<div class="product-name">GOMELA</div>
-<div class="ingredients">Ron añejo y blanco, piña, Smirnoff, limón</div>
-<div class="price">$21.000</div>
-</div>
-
-<div class="product-card">
-<img src="producto.png">
-<div class="product-name">¡VIVA EL DIVO!</div>
-<div class="ingredients">Tequila doble, limón, michelada tajín</div>
-<div class="price">$21.000</div>
-</div>
 </div>
 
 <!-- TRIGO -->
-<div class="category">TRIGO</div>
-<div class="product-grid">
-<div class="product-card">
-<img src="producto.png">
-<div class="product-name">MULATA</div>
-<div class="ingredients">Ron blanco, tequila, triplesec, soda, limón</div>
-<div class="price">$22.000</div>
-</div>
+<div class="category trigo-title">TRIGO</div>
+<div class="product-grid trigo-grid">
 
-<div class="product-card">
-<img src="producto.png">
-<div class="product-name">PERLA NEGRA</div>
-<div class="ingredients">Jägermeister, licor menta, electrolit</div>
-<div class="price">$22.000</div>
-</div>
+<!-- productos trigo -->
 
-<div class="product-card">
-<img src="producto.png">
-<div class="product-name">DRACARYS</div>
-<div class="ingredients">Ginebra, Gato Negro Cabernet</div>
-<div class="price">$22.000</div>
-</div>
-
-<div class="product-card">
-<img src="producto.png">
-<div class="product-name">FUEGO VALYRIO</div>
-<div class="ingredients">Ginebra, Prosecco, licor de menta</div>
-<div class="price">$22.000</div>
-</div>
 </div>
 
 <a href="index.html" class="back">← Volver al inicio</a>
@@ -372,7 +296,6 @@ Mezcladitas
 
 <script>
 window.addEventListener("scroll", function(){
-
 const header = document.querySelector(".header");
 const indicator = document.querySelector(".section-indicator");
 
@@ -383,7 +306,6 @@ indicator.classList.add("shrink");
 header.classList.remove("shrink");
 indicator.classList.remove("shrink");
 }
-
 });
 </script>
 
