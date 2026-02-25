@@ -105,33 +105,19 @@ background:white;
 color:#111;
 }
 
-/* INDICADOR FIJO DE CATEGORÍA */
+/* 👉 BOTÓN ACTIVO (único cambio real) */
 
-.section-indicator{
-position:fixed;
-top:190px;
-width:100%;
-text-align:center;
-font-size:1.8em;
-letter-spacing:4px;
+.menu-nav a.active{
+background:#ffb347;
+color:#111;
+border:1px solid #ffb347;
 font-weight:600;
-color:#ffb347;
-text-shadow:0 0 10px rgba(255,179,71,0.6);
-z-index:900;
-transition:all 0.3s ease;
-}
-
-.section-indicator.shrink{
-top:95px;
-font-size:1.1em;
-letter-spacing:2px;
-opacity:0.9;
 }
 
 /* ESPACIADOR */
 
 .spacer{
-height:260px;
+height:220px;
 }
 
 /* CONTENIDO */
@@ -199,9 +185,6 @@ width:220px;
 .title{
 font-size:1.2em;
 }
-.section-indicator{
-font-size:1.4em;
-}
 }
 
 </style>
@@ -216,14 +199,10 @@ font-size:1.4em;
 <div class="menu-nav">
 <a href="index.html">Inicio</a>
 <a href="mezcladitas.html">Mezcladitas</a>
+<a href="firma.html" class="active">Firma de la Casa</a>
 <a href="cervezas.html">Cervezas</a>
 <a href="sinalcohol.html">Sin Alcohol</a>
 </div>
-</div>
-
-<!-- NUEVO INDICADOR FIJO -->
-<div class="section-indicator">
-Firma de la Casa
 </div>
 
 <div class="spacer"></div>
@@ -287,13 +266,11 @@ Firma de la Casa
 </div>
 
 <script>
-
 const header = document.querySelector(".header");
-const indicator = document.querySelector(".section-indicator");
 const spacer = document.querySelector(".spacer");
 
 function adjustSpacer(){
-spacer.style.height = (header.offsetHeight + indicator.offsetHeight + 40) + "px";
+spacer.style.height = (header.offsetHeight + 40) + "px";
 }
 
 window.addEventListener("load", adjustSpacer);
@@ -302,14 +279,11 @@ window.addEventListener("resize", adjustSpacer);
 window.addEventListener("scroll", function(){
 if(window.scrollY > 80){
 header.classList.add("shrink");
-indicator.classList.add("shrink");
 } else {
 header.classList.remove("shrink");
-indicator.classList.remove("shrink");
 }
 adjustSpacer();
 });
-
 </script>
 
 </body>
