@@ -66,7 +66,7 @@ font-size:1.5em;
 letter-spacing:3px;
 margin-bottom:15px;
 transition:all 0.3s ease;
-color:#ffb347; /* tono distintivo */
+color:#ffb347;
 }
 
 .header.shrink .title{
@@ -105,10 +105,33 @@ background:white;
 color:#111;
 }
 
+/* INDICADOR FIJO DE CATEGORÍA */
+
+.section-indicator{
+position:fixed;
+top:190px;
+width:100%;
+text-align:center;
+font-size:1.8em;
+letter-spacing:4px;
+font-weight:600;
+color:#ffb347;
+text-shadow:0 0 10px rgba(255,179,71,0.6);
+z-index:900;
+transition:all 0.3s ease;
+}
+
+.section-indicator.shrink{
+top:95px;
+font-size:1.1em;
+letter-spacing:2px;
+opacity:0.9;
+}
+
 /* ESPACIADOR */
 
 .spacer{
-height:220px; /* más aire arriba */
+height:260px;
 }
 
 /* CONTENIDO */
@@ -136,13 +159,11 @@ margin-bottom:15px;
 transition:transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-/* Zoom */
 .product-card img:hover{
 transform:scale(1.12);
 }
 
 /* Neón ámbar */
-
 .neon-firma{
 box-shadow:0 0 12px #ffb347, 0 0 25px #ffb347;
 }
@@ -178,6 +199,9 @@ width:220px;
 .title{
 font-size:1.2em;
 }
+.section-indicator{
+font-size:1.4em;
+}
 }
 
 </style>
@@ -195,6 +219,11 @@ font-size:1.2em;
 <a href="cervezas.html">Cervezas</a>
 <a href="sinalcohol.html">Sin Alcohol</a>
 </div>
+</div>
+
+<!-- NUEVO INDICADOR FIJO -->
+<div class="section-indicator">
+Firma de la Casa
 </div>
 
 <div class="spacer"></div>
@@ -258,11 +287,13 @@ font-size:1.2em;
 </div>
 
 <script>
+
 const header = document.querySelector(".header");
+const indicator = document.querySelector(".section-indicator");
 const spacer = document.querySelector(".spacer");
 
 function adjustSpacer(){
-spacer.style.height = (header.offsetHeight + 40) + "px";
+spacer.style.height = (header.offsetHeight + indicator.offsetHeight + 40) + "px";
 }
 
 window.addEventListener("load", adjustSpacer);
@@ -271,11 +302,14 @@ window.addEventListener("resize", adjustSpacer);
 window.addEventListener("scroll", function(){
 if(window.scrollY > 80){
 header.classList.add("shrink");
+indicator.classList.add("shrink");
 } else {
 header.classList.remove("shrink");
+indicator.classList.remove("shrink");
 }
 adjustSpacer();
 });
+
 </script>
 
 </body>
