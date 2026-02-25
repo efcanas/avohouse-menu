@@ -66,6 +66,7 @@ font-size:1.4em;
 letter-spacing:3px;
 margin-bottom:15px;
 transition:all 0.3s ease;
+color:#d4af37;
 }
 
 .header.shrink .title{
@@ -104,7 +105,7 @@ background:white;
 color:#111;
 }
 
-/* BOTÓN ACTIVO (tono dorado elegante) */
+/* BOTÓN ACTIVO */
 
 .menu-nav a.active{
 background:#d4af37;
@@ -117,7 +118,7 @@ font-weight:600;
 
 .container{
 max-width:1100px;
-margin:220px auto 80px auto;
+margin:260px auto 80px auto;
 padding:0 20px;
 }
 
@@ -214,7 +215,8 @@ color:white;
 
 <div class="header">
 <img src="LogoPrincipal.png" class="logo">
-<div class="title">AvoHouse Pub</div>
+<div class="title">Mezcladitas</div>
+
 <div class="menu-nav">
 <a href="index.html">Inicio</a>
 <a href="mezcladitas.html" class="active">Mezcladitas</a>
@@ -335,7 +337,6 @@ color:white;
 <script>
 window.addEventListener("scroll", function(){
 const header = document.querySelector(".header");
-
 if(window.scrollY > 80){
 header.classList.add("shrink");
 } else {
