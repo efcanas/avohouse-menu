@@ -6,9 +6,12 @@
 <title>Firma de la Casa | AvoHouse Pub</title>
 
 <style>
-:root{ --accent:#d4a017; }
 
-*{margin:0;padding:0;box-sizing:border-box;}
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
 
 body{
 font-family:'Helvetica Neue', Arial, sans-serif;
@@ -19,81 +22,164 @@ background:url('Fondo.png') center/cover fixed no-repeat;
 body::before{
 content:"";
 position:fixed;
-top:0;left:0;
-width:100%;height:100%;
+top:0;
+left:0;
+width:100%;
+height:100%;
 background:rgba(0,0,0,0.75);
 z-index:-1;
 }
 
+/* HEADER FIJO */
+
 .header{
 position:fixed;
-top:0;left:0;width:100%;
+top:0;
+left:0;
+width:100%;
 z-index:1000;
 text-align:center;
-padding:25px 20px 15px;
+padding:25px 20px 15px 20px;
 background:rgba(0,0,0,0.85);
 backdrop-filter:blur(8px);
 border-bottom:1px solid rgba(255,255,255,0.08);
-transition:.3s;
+transition:all 0.3s ease;
 }
 
-.header.shrink{padding:10px 20px 5px;}
+.header.shrink{
+padding:10px 20px 5px 20px;
+}
 
-.logo{width:240px;transition:.3s;}
-.header.shrink .logo{width:160px;}
+.logo{
+width:260px;
+max-width:90%;
+margin-bottom:8px;
+transition:all 0.3s ease;
+}
 
-.title{margin-bottom:10px;}
+.header.shrink .logo{
+width:170px;
+}
+
+.title{
+font-size:1.5em;
+letter-spacing:3px;
+margin-bottom:15px;
+transition:all 0.3s ease;
+color:#ffb347; /* tono distintivo */
+}
+
+.header.shrink .title{
+font-size:1.1em;
+margin-bottom:8px;
+}
+
+/* NAV */
 
 .menu-nav{
 display:flex;
-justify-content:center;
-gap:12px;
 overflow-x:auto;
-padding:10px 0;
+gap:12px;
+padding:10px 20px 20px 20px;
+justify-content:center;
+}
+
+.menu-nav::-webkit-scrollbar{
+display:none;
 }
 
 .menu-nav a{
+flex:0 0 auto;
 text-decoration:none;
 color:white;
 padding:10px 18px;
 border:1px solid rgba(255,255,255,0.25);
 border-radius:30px;
 font-size:0.85em;
+white-space:nowrap;
+transition:0.3s;
 }
 
-.menu-nav a.active{
-background:var(--accent);
+.menu-nav a:hover{
+background:white;
 color:#111;
-border-color:var(--accent);
 }
 
-.section-indicator{
-position:fixed;
-top:170px;
-width:100%;
-text-align:center;
-font-size:2em;
-color:var(--accent);
-transition:.3s;
+/* ESPACIADOR */
+
+.spacer{
+height:220px; /* más aire arriba */
 }
 
-.section-indicator.shrink{
-top:85px;
-font-size:1.1em;
-}
+/* CONTENIDO */
 
 .container{
-max-width:800px;
-margin:320px auto 80px;
+max-width:1100px;
+margin:0 auto 80px auto;
 padding:0 20px;
 }
 
-.menu-item{
-display:flex;
-justify-content:space-between;
-padding:10px 0;
-border-bottom:1px solid rgba(255,255,255,0.08);
+.product-grid{
+display:grid;
+grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+gap:40px;
 }
+
+.product-card{
+text-align:center;
+}
+
+.product-card img{
+width:100%;
+border-radius:12px;
+margin-bottom:15px;
+transition:transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Zoom */
+.product-card img:hover{
+transform:scale(1.12);
+}
+
+/* Neón ámbar */
+
+.neon-firma{
+box-shadow:0 0 12px #ffb347, 0 0 25px #ffb347;
+}
+
+.product-name{
+font-size:1.05em;
+margin-bottom:6px;
+letter-spacing:1px;
+}
+
+.price{
+font-size:0.95em;
+color:#e0e0e0;
+}
+
+.back{
+display:block;
+text-align:center;
+margin-top:60px;
+color:#ccc;
+text-decoration:none;
+font-size:0.9em;
+}
+
+.back:hover{
+color:white;
+}
+
+@media (max-width:480px){
+.logo{
+width:220px;
+}
+.title{
+font-size:1.2em;
+}
+}
+
 </style>
 </head>
 
@@ -101,41 +187,94 @@ border-bottom:1px solid rgba(255,255,255,0.08);
 
 <div class="header">
 <img src="LogoPrincipal.png" class="logo">
-<div class="title">AvoHouse Pub</div>
+<div class="title">Firma de la Casa</div>
 
 <div class="menu-nav">
 <a href="index.html">Inicio</a>
 <a href="mezcladitas.html">Mezcladitas</a>
-<a href="firma.html" class="active">Firma de la Casa</a>
 <a href="cervezas.html">Cervezas</a>
 <a href="sinalcohol.html">Sin Alcohol</a>
 </div>
 </div>
 
-<div class="section-indicator">Firma de la Casa</div>
+<div class="spacer"></div>
 
 <div class="container">
-<div class="menu-item"><span>Corona Día</span><span>$18.000</span></div>
-<div class="menu-item"><span>Corona Tarde</span><span>$18.000</span></div>
-<div class="menu-item"><span>Corona Noche</span><span>$18.000</span></div>
-<div class="menu-item"><span>Entropía</span><span>$18.000</span></div>
-<div class="menu-item"><span>Explosión Solar</span><span>$18.000</span></div>
-<div class="menu-item"><span>Fusión Naranja</span><span>$18.000</span></div>
-<div class="menu-item"><span>Gravedad Rosa</span><span>$18.000</span></div>
-<div class="menu-item"><span>El Profe</span><span>$18.000</span></div>
+
+<div class="product-grid">
+
+<div class="product-card">
+<img src="producto.png" class="neon-firma">
+<div class="product-name">Corona Día</div>
+<div class="price">$18.000</div>
+</div>
+
+<div class="product-card">
+<img src="producto.png" class="neon-firma">
+<div class="product-name">Corona Tarde</div>
+<div class="price">$18.000</div>
+</div>
+
+<div class="product-card">
+<img src="producto.png" class="neon-firma">
+<div class="product-name">Corona Noche</div>
+<div class="price">$18.000</div>
+</div>
+
+<div class="product-card">
+<img src="producto.png" class="neon-firma">
+<div class="product-name">Entropía</div>
+<div class="price">$18.000</div>
+</div>
+
+<div class="product-card">
+<img src="producto.png" class="neon-firma">
+<div class="product-name">Explosión Solar</div>
+<div class="price">$18.000</div>
+</div>
+
+<div class="product-card">
+<img src="producto.png" class="neon-firma">
+<div class="product-name">Fusión Naranja</div>
+<div class="price">$18.000</div>
+</div>
+
+<div class="product-card">
+<img src="producto.png" class="neon-firma">
+<div class="product-name">Gravedad Rosa</div>
+<div class="price">$18.000</div>
+</div>
+
+<div class="product-card">
+<img src="producto.png" class="neon-firma">
+<div class="product-name">El Profe</div>
+<div class="price">$18.000</div>
+</div>
+
+</div>
+
+<a href="index.html" class="back">← Volver al inicio</a>
+
 </div>
 
 <script>
-window.addEventListener("scroll", function(){
-const header=document.querySelector(".header");
-const indicator=document.querySelector(".section-indicator");
-if(window.scrollY>80){
-header.classList.add("shrink");
-indicator.classList.add("shrink");
-}else{
-header.classList.remove("shrink");
-indicator.classList.remove("shrink");
+const header = document.querySelector(".header");
+const spacer = document.querySelector(".spacer");
+
+function adjustSpacer(){
+spacer.style.height = (header.offsetHeight + 40) + "px";
 }
+
+window.addEventListener("load", adjustSpacer);
+window.addEventListener("resize", adjustSpacer);
+
+window.addEventListener("scroll", function(){
+if(window.scrollY > 80){
+header.classList.add("shrink");
+} else {
+header.classList.remove("shrink");
+}
+adjustSpacer();
 });
 </script>
 
