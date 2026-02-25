@@ -6,9 +6,13 @@
 <title>Mezcladitas | AvoHouse Pub</title>
 
 <style>
-:root{ --accent:#c6a64b; }
 
-*{margin:0;padding:0;box-sizing:border-box;}
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+scroll-behavior:smooth;
+}
 
 body{
 font-family:'Helvetica Neue', Arial, sans-serif;
@@ -19,107 +23,78 @@ background:url('Fondo.png') center/cover fixed no-repeat;
 body::before{
 content:"";
 position:fixed;
-top:0;left:0;
-width:100%;height:100%;
+top:0;
+left:0;
+width:100%;
+height:100%;
 background:rgba(0,0,0,0.75);
 z-index:-1;
 }
 
-/* HEADER */
-.header{
+/* ===== HEADER FIJO ===== */
+
+.top-nav{
 position:fixed;
-top:0;left:0;width:100%;
-z-index:1000;
+top:0;
+left:0;
+width:100%;
+background:rgba(0,0,0,0.9);
+padding:15px 0;
 text-align:center;
-padding:25px 20px 15px;
-background:rgba(0,0,0,0.85);
-backdrop-filter:blur(8px);
-border-bottom:1px solid rgba(255,255,255,0.08);
-transition:.3s;
+z-index:1000;
 }
 
-.header.shrink{padding:10px 20px 5px;}
-
-.logo{
-width:260px;
-transition:.3s;
-}
-
-.header.shrink .logo{
-width:170px;
-}
-
-.title{
-font-size:1.2em;
-letter-spacing:3px;
-margin-bottom:10px;
-}
-
-/* NAV */
-.menu-nav{
-display:flex;
-justify-content:center;
-gap:12px;
-overflow-x:auto;
-padding:10px 0;
-scrollbar-width:none;
-}
-
-.menu-nav::-webkit-scrollbar{display:none;}
-
-.menu-nav a{
+.top-nav a{
 text-decoration:none;
 color:white;
-padding:10px 18px;
-border:1px solid rgba(255,255,255,0.25);
+border:1px solid rgba(255,255,255,0.3);
+padding:10px 20px;
 border-radius:30px;
 font-size:0.85em;
-white-space:nowrap;
-transition:.3s;
+letter-spacing:2px;
+transition:0.3s;
 }
 
-.menu-nav a.active{
-background:var(--accent);
-color:#111;
-border-color:var(--accent);
+.top-nav a:hover{
+background:white;
+color:black;
 }
 
-/* INDICADOR */
-.section-indicator{
-position:fixed;
-top:180px;
-width:100%;
-text-align:center;
-font-size:2em;
-color:var(--accent);
-transition:.3s;
-}
+/* ===== CONTENIDO ===== */
 
-.section-indicator.shrink{
-top:95px;
-font-size:1.1em;
-}
-
-/* CONTENIDO */
 .container{
 max-width:900px;
-margin:330px auto 80px;
-padding:0 20px;
+margin:120px auto 80px auto;
+padding:20px;
+}
+
+.category-title{
+font-size:1.8em;
+letter-spacing:4px;
+margin-bottom:40px;
+text-align:center;
+}
+
+.subcategory{
+margin-top:40px;
+font-size:1.2em;
+letter-spacing:3px;
+border-bottom:1px solid rgba(255,255,255,0.2);
+padding-bottom:10px;
+margin-bottom:25px;
 }
 
 .product{
-margin-bottom:35px;
-padding-bottom:20px;
-border-bottom:1px solid rgba(255,255,255,0.08);
+margin-bottom:40px;
 }
 
 .product img{
 width:100%;
 max-width:400px;
 border-radius:10px;
-margin-bottom:10px;
+margin-bottom:15px;
 cursor:pointer;
-transition:.3s;
+transition:0.3s;
 }
 
 .product img:hover{
@@ -128,7 +103,6 @@ transform:scale(1.05);
 
 .product h3{
 font-size:1.1em;
-color:var(--accent);
 margin-bottom:5px;
 }
 
@@ -138,108 +112,69 @@ font-weight:bold;
 }
 
 .ingredients{
-font-size:0.85em;
+font-size:0.9em;
 color:#ccc;
-margin-top:5px;
-line-height:1.4;
+line-height:1.5;
 }
 
-/* MODAL */
-.modal{
-display:none;
-position:fixed;
-z-index:2000;
-padding-top:100px;
-left:0;top:0;
-width:100%;height:100%;
-background-color:rgba(0,0,0,0.9);
+@media(max-width:480px){
+.product img{
+max-width:100%;
+}
 }
 
-.modal-content{
-display:block;
-margin:auto;
-max-width:90%;
-max-height:80%;
-}
-
-.modal.show{
-display:block;
-}
 </style>
 </head>
 
 <body>
 
-<div class="header">
-<img src="LogoPrincipal.png" class="logo">
-<div class="title">AvoHouse Pub</div>
+<!-- BOTÓN FIJO DE CATEGORÍA -->
 
-<div class="menu-nav">
-<a href="index.html">Inicio</a>
-<a href="mezcladitas.html" class="active">Mezcladitas</a>
-<a href="firma.html">Firma de la Casa</a>
-<a href="cervezas.html">Cervezas</a>
-<a href="sinalcohol.html">Sin Alcohol</a>
+<div class="top-nav">
+<a href="index.html">← Volver al Menú</a>
 </div>
-</div>
-
-<div class="section-indicator">Mezcladitas</div>
 
 <div class="container">
 
-<div class="product">
-<img src="producto.png" onclick="openModal(this)">
-<h3>Mezcladita Clásica <span class="price">$18.000</span></h3>
-<div class="ingredients">Cerveza, limón, sal y escarchado especial.</div>
-</div>
+<div class="category-title">MEZCLADITAS</div>
+
+<!-- DORADA -->
+
+<div class="subcategory">DORADA</div>
 
 <div class="product">
-<img src="producto.png" onclick="openModal(this)">
+<img src="producto.png">
+<h3>Mezcladita Dorada <span class="price">$18.000</span></h3>
+<div class="ingredients">
+Cerveza dorada, limón, sal especial y mezcla de la casa.
+</div>
+</div>
+
+<!-- ROJA -->
+
+<div class="subcategory">ROJA</div>
+
+<div class="product">
+<img src="producto.png">
 <h3>Mezcladita Roja <span class="price">$18.000</span></h3>
-<div class="ingredients">Cerveza, frutos rojos, limón y toque dulce.</div>
+<div class="ingredients">
+Cerveza roja, frutos rojos, limón y toque dulce artesanal.
 </div>
+</div>
+
+<!-- TRIGO -->
+
+<div class="subcategory">TRIGO</div>
 
 <div class="product">
-<img src="producto.png" onclick="openModal(this)">
-<h3>Mezcladita Tropical <span class="price">$18.000</span></h3>
-<div class="ingredients">Cerveza, maracuyá, mango y cítricos.</div>
+<img src="producto.png">
+<h3>Mezcladita Trigo <span class="price">$18.000</span></h3>
+<div class="ingredients">
+Cerveza de trigo, cítricos frescos y especias suaves.
 </div>
-
-<div class="product">
-<img src="producto.png" onclick="openModal(this)">
-<h3>Mezcladita Negra <span class="price">$18.000</span></h3>
-<div class="ingredients">Cerveza oscura, limón y mezcla especiada.</div>
 </div>
 
 </div>
-
-<!-- MODAL -->
-<div id="imgModal" class="modal" onclick="closeModal()">
-<img class="modal-content" id="modalImg">
-</div>
-
-<script>
-window.addEventListener("scroll", function(){
-const header=document.querySelector(".header");
-const indicator=document.querySelector(".section-indicator");
-if(window.scrollY>80){
-header.classList.add("shrink");
-indicator.classList.add("shrink");
-}else{
-header.classList.remove("shrink");
-indicator.classList.remove("shrink");
-}
-});
-
-function openModal(img){
-document.getElementById("imgModal").classList.add("show");
-document.getElementById("modalImg").src = img.src;
-}
-
-function closeModal(){
-document.getElementById("imgModal").classList.remove("show");
-}
-</script>
 
 </body>
 </html>
