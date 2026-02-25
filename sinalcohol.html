@@ -17,6 +17,7 @@ body{
 font-family:'Helvetica Neue', Arial, sans-serif;
 color:white;
 background:url('Fondo.png') center/cover fixed no-repeat;
+padding-top:240px;
 }
 
 body::before{
@@ -65,7 +66,7 @@ width:170px;
 font-size:1.5em;
 letter-spacing:3px;
 margin-bottom:15px;
-color:#7fffd4; /* aqua suave */
+color:#7fffd4;
 transition:all 0.3s ease;
 }
 
@@ -105,17 +106,20 @@ background:white;
 color:#111;
 }
 
-/* ESPACIADOR */
+/* BOTÓN ACTIVO */
 
-.spacer{
-height:220px; /* más aire arriba */
+.menu-nav a.active{
+background:rgba(127,255,212,0.15);
+color:#7fffd4;
+font-weight:600;
+border-color:#7fffd4;
 }
 
 /* CONTENIDO */
 
 .container{
 max-width:1000px;
-margin:0 auto 80px auto;
+margin:80px auto 80px auto;
 padding:0 20px;
 }
 
@@ -135,8 +139,6 @@ border-radius:12px;
 margin-bottom:15px;
 transition:transform 0.3s ease, box-shadow 0.3s ease;
 }
-
-/* Zoom */
 
 .product-card img:hover{
 transform:scale(1.12);
@@ -186,10 +188,9 @@ color:white;
 <a href="mezcladitas.html">Mezcladitas</a>
 <a href="firma.html">Firma de la Casa</a>
 <a href="cervezas.html">Cervezas</a>
+<a href="sinalcohol.html" class="active">Sin Alcohol</a>
 </div>
 </div>
-
-<div class="spacer"></div>
 
 <div class="container">
 
@@ -238,23 +239,13 @@ color:white;
 </div>
 
 <script>
-const header = document.querySelector(".header");
-const spacer = document.querySelector(".spacer");
-
-function adjustSpacer(){
-spacer.style.height = (header.offsetHeight + 40) + "px";
-}
-
-window.addEventListener("load", adjustSpacer);
-window.addEventListener("resize", adjustSpacer);
-
 window.addEventListener("scroll", function(){
+const header = document.querySelector(".header");
 if(window.scrollY > 80){
 header.classList.add("shrink");
 } else {
 header.classList.remove("shrink");
 }
-adjustSpacer();
 });
 </script>
 
