@@ -150,17 +150,9 @@ font-weight:700;
 
 /* COLORES CORRECTOS */
 
-.dorada-title{
-color:#d4af37;
-}
-
-.roja-title{
-color:#e10600;
-}
-
-.trigo-title{
-color:#2e8b57;
-}
+.dorada-title{ color:#d4af37; }
+.roja-title{ color:#e10600; }
+.trigo-title{ color:#2e8b57; }
 
 /* GRID */
 
@@ -181,6 +173,10 @@ margin-bottom:15px;
 transition:0.3s;
 }
 
+.product-card img:hover{
+transform:scale(1.05);
+}
+
 /* NEÓN CORRECTO */
 
 .dorada-grid img{
@@ -193,10 +189,6 @@ box-shadow:0 0 10px #e10600, 0 0 25px #e10600;
 
 .trigo-grid img{
 box-shadow:0 0 10px #2e8b57, 0 0 25px #2e8b57;
-}
-
-.product-card img:hover{
-transform:scale(1.05);
 }
 
 .product-name{
@@ -231,12 +223,8 @@ color:white;
 }
 
 @media (max-width:480px){
-.logo{
-width:200px;
-}
-.section-indicator{
-font-size:1.6em;
-}
+.logo{ width:200px; }
+.section-indicator{ font-size:1.6em; }
 }
 
 </style>
@@ -245,11 +233,8 @@ font-size:1.6em;
 <body>
 
 <div class="header">
-
 <img src="LogoPrincipal.png" class="logo">
-
 <div class="title">AvoHouse Pub</div>
-
 <div class="menu-nav">
 <a href="index.html">Inicio</a>
 <a href="mezcladitas.html" class="active">Mezcladitas</a>
@@ -257,7 +242,6 @@ font-size:1.6em;
 <a href="cervezas.html">Cervezas</a>
 <a href="sinalcohol.html">Sin Alcohol</a>
 </div>
-
 </div>
 
 <div class="section-indicator">
@@ -270,7 +254,33 @@ Mezcladitas
 <div class="category dorada-title">DORADA</div>
 <div class="product-grid dorada-grid">
 
-<!-- productos dorada -->
+<div class="product-card">
+<img src="producto.png">
+<div class="product-name">ICEBEER</div>
+<div class="ingredients">Vodka, naranja, Smirnoff Ice</div>
+<div class="price">$20.000</div>
+</div>
+
+<div class="product-card">
+<img src="producto.png">
+<div class="product-name">PARA EL CALOR</div>
+<div class="ingredients">Whisky, licor de menta, naranja</div>
+<div class="price">$20.000</div>
+</div>
+
+<div class="product-card">
+<img src="producto.png">
+<div class="product-name">ALOHA!!!</div>
+<div class="ingredients">Ron blanco doble, piña, coco, soda</div>
+<div class="price">$20.000</div>
+</div>
+
+<div class="product-card">
+<img src="producto.png">
+<div class="product-name">MÉXICO AZUL</div>
+<div class="ingredients">Tequila doble, curaçao azul, limón, michelada con sal</div>
+<div class="price">$21.000</div>
+</div>
 
 </div>
 
@@ -278,7 +288,33 @@ Mezcladitas
 <div class="category roja-title">ROJA</div>
 <div class="product-grid roja-grid">
 
-<!-- productos roja -->
+<div class="product-card">
+<img src="producto.png">
+<div class="product-name">PODEROSA</div>
+<div class="ingredients">Whisky, amaretto, electrolit, soda</div>
+<div class="price">$20.000</div>
+</div>
+
+<div class="product-card">
+<img src="producto.png">
+<div class="product-name">TROPICAL</div>
+<div class="ingredients">Vodka, amaretto, naranja, curaçao azul</div>
+<div class="price">$20.000</div>
+</div>
+
+<div class="product-card">
+<img src="producto.png">
+<div class="product-name">GOMELA</div>
+<div class="ingredients">Ron añejo y blanco, piña, Smirnoff, limón</div>
+<div class="price">$21.000</div>
+</div>
+
+<div class="product-card">
+<img src="producto.png">
+<div class="product-name">¡VIVA EL DIVO!</div>
+<div class="ingredients">Tequila doble, limón, michelada tajín</div>
+<div class="price">$21.000</div>
+</div>
 
 </div>
 
@@ -286,7 +322,33 @@ Mezcladitas
 <div class="category trigo-title">TRIGO</div>
 <div class="product-grid trigo-grid">
 
-<!-- productos trigo -->
+<div class="product-card">
+<img src="producto.png">
+<div class="product-name">MULATA</div>
+<div class="ingredients">Ron blanco, tequila, triplesec, soda, limón</div>
+<div class="price">$22.000</div>
+</div>
+
+<div class="product-card">
+<img src="producto.png">
+<div class="product-name">PERLA NEGRA</div>
+<div class="ingredients">Jägermeister, licor menta, electrolit</div>
+<div class="price">$22.000</div>
+</div>
+
+<div class="product-card">
+<img src="producto.png">
+<div class="product-name">DRACARYS</div>
+<div class="ingredients">Ginebra, Gato Negro Cabernet</div>
+<div class="price">$22.000</div>
+</div>
+
+<div class="product-card">
+<img src="producto.png">
+<div class="product-name">FUEGO VALYRIO</div>
+<div class="ingredients">Ginebra, Prosecco, licor de menta</div>
+<div class="price">$22.000</div>
+</div>
 
 </div>
 
