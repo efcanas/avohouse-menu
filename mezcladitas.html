@@ -6,12 +6,9 @@
 <title>Mezcladitas | AvoHouse Pub</title>
 
 <style>
+:root{ --accent:#c6a64b; }
 
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-}
+*{margin:0;padding:0;box-sizing:border-box;}
 
 body{
 font-family:'Helvetica Neue', Arial, sans-serif;
@@ -19,43 +16,33 @@ color:white;
 background:url('Fondo.png') center/cover fixed no-repeat;
 }
 
-/* Oscurecedor elegante */
 body::before{
 content:"";
 position:fixed;
-top:0;
-left:0;
-width:100%;
-height:100%;
+top:0;left:0;
+width:100%;height:100%;
 background:rgba(0,0,0,0.75);
 z-index:-1;
 }
 
 /* HEADER */
-
 .header{
 position:fixed;
-top:0;
-left:0;
-width:100%;
+top:0;left:0;width:100%;
 z-index:1000;
 text-align:center;
-padding:25px 20px 15px 20px;
+padding:25px 20px 15px;
 background:rgba(0,0,0,0.85);
 backdrop-filter:blur(8px);
 border-bottom:1px solid rgba(255,255,255,0.08);
-transition:all 0.3s ease;
+transition:.3s;
 }
 
-.header.shrink{
-padding:10px 20px 5px 20px;
-}
+.header.shrink{padding:10px 20px 5px;}
 
 .logo{
 width:260px;
-max-width:90%;
-margin-bottom:8px;
-transition:all 0.3s ease;
+transition:.3s;
 }
 
 .header.shrink .logo{
@@ -63,33 +50,24 @@ width:170px;
 }
 
 .title{
-font-size:1.4em;
+font-size:1.2em;
 letter-spacing:3px;
-margin-bottom:15px;
-transition:all 0.3s ease;
-}
-
-.header.shrink .title{
-font-size:1em;
-margin-bottom:8px;
+margin-bottom:10px;
 }
 
 /* NAV */
-
 .menu-nav{
 display:flex;
-overflow-x:auto;
-gap:12px;
-padding:10px 0 10px 0;
 justify-content:center;
+gap:12px;
+overflow-x:auto;
+padding:10px 0;
+scrollbar-width:none;
 }
 
-.menu-nav::-webkit-scrollbar{
-display:none;
-}
+.menu-nav::-webkit-scrollbar{display:none;}
 
 .menu-nav a{
-flex:0 0 auto;
 text-decoration:none;
 color:white;
 padding:10px 18px;
@@ -97,127 +75,103 @@ border:1px solid rgba(255,255,255,0.25);
 border-radius:30px;
 font-size:0.85em;
 white-space:nowrap;
-transition:0.3s;
-}
-
-.menu-nav a:hover{
-background:white;
-color:#111;
+transition:.3s;
 }
 
 .menu-nav a.active{
-background:white;
+background:var(--accent);
 color:#111;
-font-weight:600;
+border-color:var(--accent);
 }
 
-/* INDICADOR DE SECCIÓN */
-
+/* INDICADOR */
 .section-indicator{
 position:fixed;
-top:170px;
+top:180px;
 width:100%;
 text-align:center;
 font-size:2em;
-letter-spacing:4px;
-font-weight:500;
-z-index:900;
-transition:all 0.3s ease;
+color:var(--accent);
+transition:.3s;
 }
 
 .section-indicator.shrink{
-top:85px;
+top:95px;
 font-size:1.1em;
-letter-spacing:2px;
-opacity:0.9;
 }
 
 /* CONTENIDO */
-
 .container{
-max-width:1100px;
-margin:320px auto 80px auto;
+max-width:900px;
+margin:330px auto 80px;
 padding:0 20px;
 }
 
-.category{
-margin:60px 0 30px 0;
-font-size:1.3em;
-letter-spacing:3px;
-text-align:center;
-color:#e5e5e5;
+.product{
+margin-bottom:35px;
+padding-bottom:20px;
+border-bottom:1px solid rgba(255,255,255,0.08);
 }
 
-.product-grid{
-display:grid;
-grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-gap:40px;
-}
-
-.product-card{
-text-align:center;
-}
-
-.product-card img{
+.product img{
 width:100%;
-border-radius:12px;
-margin-bottom:15px;
-transition:0.3s;
+max-width:400px;
+border-radius:10px;
+margin-bottom:10px;
+cursor:pointer;
+transition:.3s;
 }
 
-.product-card img:hover{
+.product img:hover{
 transform:scale(1.05);
 }
 
-.product-name{
-font-size:1.05em;
-margin-bottom:6px;
-letter-spacing:1px;
+.product h3{
+font-size:1.1em;
+color:var(--accent);
+margin-bottom:5px;
+}
+
+.price{
+float:right;
+font-weight:bold;
 }
 
 .ingredients{
 font-size:0.85em;
-color:#bbb;
-margin-bottom:8px;
+color:#ccc;
+margin-top:5px;
 line-height:1.4;
 }
 
-.price{
-font-size:0.95em;
-color:#e0e0e0;
+/* MODAL */
+.modal{
+display:none;
+position:fixed;
+z-index:2000;
+padding-top:100px;
+left:0;top:0;
+width:100%;height:100%;
+background-color:rgba(0,0,0,0.9);
 }
 
-.back{
+.modal-content{
 display:block;
-text-align:center;
-margin-top:60px;
-color:#ccc;
-text-decoration:none;
-font-size:0.9em;
+margin:auto;
+max-width:90%;
+max-height:80%;
 }
 
-.back:hover{
-color:white;
+.modal.show{
+display:block;
 }
-
-@media (max-width:480px){
-.logo{
-width:200px;
-}
-.section-indicator{
-font-size:1.6em;
-}
-}
-
 </style>
 </head>
 
 <body>
 
 <div class="header">
-
 <img src="LogoPrincipal.png" class="logo">
-
 <div class="title">AvoHouse Pub</div>
 
 <div class="menu-nav">
@@ -227,136 +181,64 @@ font-size:1.6em;
 <a href="cervezas.html">Cervezas</a>
 <a href="sinalcohol.html">Sin Alcohol</a>
 </div>
-
 </div>
 
-<div class="section-indicator">
-Mezcladitas
-</div>
+<div class="section-indicator">Mezcladitas</div>
 
 <div class="container">
 
-<!-- DORADA -->
-<div class="category">DORADA</div>
-<div class="product-grid">
-
-<div class="product-card">
-<img src="producto.png">
-<div class="product-name">ICEBEER</div>
-<div class="ingredients">Vodka, naranja, Smirnoff Ice</div>
-<div class="price">$20.000</div>
+<div class="product">
+<img src="producto.png" onclick="openModal(this)">
+<h3>Mezcladita Clásica <span class="price">$18.000</span></h3>
+<div class="ingredients">Cerveza, limón, sal y escarchado especial.</div>
 </div>
 
-<div class="product-card">
-<img src="producto.png">
-<div class="product-name">PARA EL CALOR</div>
-<div class="ingredients">Whisky, licor de menta, naranja</div>
-<div class="price">$20.000</div>
+<div class="product">
+<img src="producto.png" onclick="openModal(this)">
+<h3>Mezcladita Roja <span class="price">$18.000</span></h3>
+<div class="ingredients">Cerveza, frutos rojos, limón y toque dulce.</div>
 </div>
 
-<div class="product-card">
-<img src="producto.png">
-<div class="product-name">ALOHA!!!</div>
-<div class="ingredients">Ron blanco doble, piña, coco, soda</div>
-<div class="price">$20.000</div>
+<div class="product">
+<img src="producto.png" onclick="openModal(this)">
+<h3>Mezcladita Tropical <span class="price">$18.000</span></h3>
+<div class="ingredients">Cerveza, maracuyá, mango y cítricos.</div>
 </div>
 
-<div class="product-card">
-<img src="producto.png">
-<div class="product-name">MÉXICO AZUL</div>
-<div class="ingredients">Tequila doble, curaçao azul, limón, michelada con sal</div>
-<div class="price">$21.000</div>
+<div class="product">
+<img src="producto.png" onclick="openModal(this)">
+<h3>Mezcladita Negra <span class="price">$18.000</span></h3>
+<div class="ingredients">Cerveza oscura, limón y mezcla especiada.</div>
 </div>
 
 </div>
 
-<!-- ROJA -->
-<div class="category">ROJA</div>
-<div class="product-grid">
-
-<div class="product-card">
-<img src="producto.png">
-<div class="product-name">PODEROSA</div>
-<div class="ingredients">Whisky, amaretto, electrolit, soda</div>
-<div class="price">$20.000</div>
-</div>
-
-<div class="product-card">
-<img src="producto.png">
-<div class="product-name">TROPICAL</div>
-<div class="ingredients">Vodka, amaretto, naranja, curaçao azul</div>
-<div class="price">$20.000</div>
-</div>
-
-<div class="product-card">
-<img src="producto.png">
-<div class="product-name">GOMELA</div>
-<div class="ingredients">Ron añejo y blanco, piña, Smirnoff, limón</div>
-<div class="price">$21.000</div>
-</div>
-
-<div class="product-card">
-<img src="producto.png">
-<div class="product-name">¡VIVA EL DIVO!</div>
-<div class="ingredients">Tequila doble, limón, michelada tajín</div>
-<div class="price">$21.000</div>
-</div>
-
-</div>
-
-<!-- TRIGO -->
-<div class="category">TRIGO</div>
-<div class="product-grid">
-
-<div class="product-card">
-<img src="producto.png">
-<div class="product-name">MULATA</div>
-<div class="ingredients">Ron blanco, tequila, triplesec, soda, limón</div>
-<div class="price">$22.000</div>
-</div>
-
-<div class="product-card">
-<img src="producto.png">
-<div class="product-name">PERLA NEGRA</div>
-<div class="ingredients">Jägermeister, licor menta, electrolit</div>
-<div class="price">$22.000</div>
-</div>
-
-<div class="product-card">
-<img src="producto.png">
-<div class="product-name">DRACARYS</div>
-<div class="ingredients">Ginebra, Gato Negro Cabernet</div>
-<div class="price">$22.000</div>
-</div>
-
-<div class="product-card">
-<img src="producto.png">
-<div class="product-name">FUEGO VALYRIO</div>
-<div class="ingredients">Ginebra, Prosecco, licor de menta</div>
-<div class="price">$22.000</div>
-</div>
-
-</div>
-
-<a href="index.html" class="back">← Volver al inicio</a>
-
+<!-- MODAL -->
+<div id="imgModal" class="modal" onclick="closeModal()">
+<img class="modal-content" id="modalImg">
 </div>
 
 <script>
 window.addEventListener("scroll", function(){
-
-const header = document.querySelector(".header");
-const indicator = document.querySelector(".section-indicator");
-
-if(window.scrollY > 80){
+const header=document.querySelector(".header");
+const indicator=document.querySelector(".section-indicator");
+if(window.scrollY>80){
 header.classList.add("shrink");
 indicator.classList.add("shrink");
-} else {
+}else{
 header.classList.remove("shrink");
 indicator.classList.remove("shrink");
 }
-
 });
+
+function openModal(img){
+document.getElementById("imgModal").classList.add("show");
+document.getElementById("modalImg").src = img.src;
+}
+
+function closeModal(){
+document.getElementById("imgModal").classList.remove("show");
+}
 </script>
 
 </body>
