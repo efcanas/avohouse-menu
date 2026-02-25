@@ -104,39 +104,20 @@ background:white;
 color:#111;
 }
 
+/* BOTÓN ACTIVO (tono dorado elegante) */
+
 .menu-nav a.active{
-background:rgba(255,255,255,0.15);
-color:white;
+background:#d4af37;
+color:#111;
+border:1px solid #d4af37;
 font-weight:600;
-border-color:rgba(255,255,255,0.4);
-}
-
-/* INDICADOR */
-
-.section-indicator{
-position:fixed;
-top:170px;
-width:100%;
-text-align:center;
-font-size:2em;
-letter-spacing:4px;
-font-weight:500;
-z-index:900;
-transition:all 0.3s ease;
-}
-
-.section-indicator.shrink{
-top:85px;
-font-size:1.1em;
-letter-spacing:2px;
-opacity:0.9;
 }
 
 /* CONTENIDO */
 
 .container{
 max-width:1100px;
-margin:320px auto 80px auto;
+margin:220px auto 80px auto;
 padding:0 20px;
 }
 
@@ -224,7 +205,6 @@ color:white;
 
 @media (max-width:480px){
 .logo{ width:200px; }
-.section-indicator{ font-size:1.6em; }
 }
 
 </style>
@@ -242,10 +222,6 @@ color:white;
 <a href="cervezas.html">Cervezas</a>
 <a href="sinalcohol.html">Sin Alcohol</a>
 </div>
-</div>
-
-<div class="section-indicator">
-Mezcladitas
 </div>
 
 <div class="container">
@@ -359,14 +335,11 @@ Mezcladitas
 <script>
 window.addEventListener("scroll", function(){
 const header = document.querySelector(".header");
-const indicator = document.querySelector(".section-indicator");
 
 if(window.scrollY > 80){
 header.classList.add("shrink");
-indicator.classList.add("shrink");
 } else {
 header.classList.remove("shrink");
-indicator.classList.remove("shrink");
 }
 });
 </script>
